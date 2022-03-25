@@ -15,6 +15,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'WYGspace', // Usually your GitHub org/user name.
   projectName: 'record', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
 
   presets: [
     [
