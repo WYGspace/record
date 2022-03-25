@@ -78,23 +78,23 @@ const config = {
           {
             title: '社区',
             items: [
-              {
-                label: '堆栈溢出',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: '微博',
-                href: 'https://twitter.com/docusaurus',
-              },
+              //{
+              //  label: '堆栈溢出',
+              //  href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              //},
+              //{
+              //  label: '微博',
+              //  href: 'https://twitter.com/docusaurus',
+              //},
             ],
           },
           {
             title: '更多',
             items: [
-              {
-                label: '博客',
-                to: '/blog',
-              },
+              //{
+              //  label: '博客',
+              //  to: '/blog',
+              //},
               {
                 label: 'GitHub',
                 href: 'https://github.com/WYGspace/record',
