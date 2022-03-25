@@ -25,13 +25,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/WYGspace/record/find/main/',
+          editUrl: 'https://github.com/WYGspace/record/blob/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/WYGspace/record/find/main/',
+          editUrl: 'https://github.com/WYGspace/record/blob/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
