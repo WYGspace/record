@@ -83,10 +83,6 @@ const config = {
                 href: 'https://stackoverflow.com/questions/tagged/docusaurus',
               },
               {
-                label: '不和谐',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
                 label: '微博',
                 href: 'https://twitter.com/docusaurus',
               },
