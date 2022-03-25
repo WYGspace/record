@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '测试站点',
-  tagline: '你猜',
+  title: '记录',
+  tagline: '『不必遗憾。若是美好，叫做精彩。若是糟糕，叫做经历。』',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -43,7 +43,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: '测试站点',
+        title: '记录',
         logo: {
           alt: 'Logo',
           src: 'img/logo.svg',
@@ -70,7 +70,7 @@ const config = {
             title: '文档',
             items: [
               {
-                label: '文档',
+                label: '教程',
                 to: '/docs/此处开始',
               },
             ],
