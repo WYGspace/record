@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '记录',
-  tagline: '『不必遗憾。若是美好，叫做精彩。若是糟糕，叫做经历。』',
+  tagline: '『不必遗憾。若是美好，叫做精彩。若是糟糕，叫做经历』',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
