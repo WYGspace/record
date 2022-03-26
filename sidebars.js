@@ -32,7 +32,8 @@ const sidebars = {
 			label: 'Linux',
 			link: {type: 'generated-index'},
 			items: [
-				'Linux/介绍'
+				'Linux/介绍',
+				'Linux/系统目录结构'
 			],
 		},
 	],
