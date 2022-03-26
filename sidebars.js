@@ -35,6 +35,7 @@ const sidebars = {
 				'Linux/介绍',
 				'Linux/系统目录结构',
 				'Linux/远程登录到Linux服务器',
+				'Linux/Vi和Vim编辑器',
 			],
 		},
 	],
