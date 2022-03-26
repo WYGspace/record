@@ -27,19 +27,14 @@ const sidebars = {
    
    docs: [
 		'此处开始',
-		//{
-		//	type: 'category',
-		//	label: '教程 - 基础知识',
-		//	link: {type: 'generated-index'},
-		//	items: [
-		//		'tutorial-basics/congratulations',
-		//		'tutorial-basics/create-a-blog-post',
-		//		'tutorial-basics/create-a-document',
-		//		'tutorial-basics/create-a-page',
-		//		'tutorial-basics/deploy-your-site',
-		//		'tutorial-basics/markdown-features',
-		//	],
-		//},
+		{
+			type: 'category',
+			label: 'Linux',
+			link: {type: 'generated-index'},
+			items: [
+				'Linux/介绍'
+			],
+		},
 	],
 };
 
