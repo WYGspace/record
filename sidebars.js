@@ -38,6 +38,14 @@ const sidebars = {
 				'Linux/Vi和Vim编辑器',
 			],
 		},
+		{
+			type: 'category',
+			label: '项目实训记载',
+			link: {type: 'generated-index'},
+			items: [
+				'项目实训记载/医院管理系统（门诊）',
+			],
+		},
 	],
 };
 
