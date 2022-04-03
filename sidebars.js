@@ -29,13 +29,20 @@ const sidebars = {
 		'此处开始',
 		{
 			type: 'category',
-			label: 'Linux',
+			label: '技术栈',
 			link: {type: 'generated-index'},
 			items: [
-				'Linux/介绍',
-				'Linux/系统目录结构',
-				'Linux/远程登录到Linux服务器',
-				'Linux/Vi和Vim编辑器',
+				{
+					type: 'category',
+					label: 'Linux',
+					link: {type: 'generated-index'},
+					items: [
+						'技术栈/Linux/介绍',
+						'技术栈/Linux/系统目录结构',
+						'技术栈/Linux/远程登录到Linux服务器',
+						'技术栈/Linux/Vi和Vim编辑器',
+					],
+				},
 			],
 		},
 		{
