@@ -34,6 +34,7 @@ const sidebars = {
 			items: [
 				'技术栈/Ajax',
 				'技术栈/Promise',
+				'技术栈/Axios',
 				{
 					type: 'category',
 					label: 'Linux',
