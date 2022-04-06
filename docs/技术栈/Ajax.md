@@ -36,3 +36,59 @@ XML 和 HTML 类似，不同的是 HTML 中都是预定义标签，而 XML 中�
 {"name":"孙悟空","age":18,"gender":"男"}
 ```
 
+### 3、AJAX 的特点 
+
+#### 1）AJAX 的优点 
+
+① 可以无需刷新页面而与服务器端进行通信。 
+
+② 允许你根据用户事件来更新部分页面内容。 
+
+#### 2） AJAX 的缺点 
+
+① 没有浏览历史，不能回退 
+
+② 存在跨域问题(同源) 
+
+③ SEO 不友好
+
+### 4、AJAX 的使用
+
+####  1）核心对象 
+
+XMLHttpRequest，AJAX 的所有操作都是通过该对象进行的。
+
+#### 2）使用步骤 
+
+① 创建 XMLHttpRequest 对象 
+
+var xhr = new XMLHttpRequest(); 
+
+② 设置请求信息 
+
+xhr.open(method, url); //可以设置请求头，一般不设置
+
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+③ 发送请求
+
+xhr.send(body) //get 请求不传 body 参数，只有 post 请求使用
+
+④ 接收响应
+
+```
+// xhr.responseXML 接收 xml 格式的响应数据
+
+// xhr.responseText 接收文本格式的响应数据 
+
+xhr.onreadystatechange = function (){ 
+
+    if(xhr.readyState == 4 && xhr.status == 200){ 
+
+    	var text = xhr.responseText; console.log(text);
+
+    } 
+
+}
+```
+
