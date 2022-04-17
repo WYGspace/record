@@ -71,7 +71,7 @@ const config = {
             items: [
               {
                 label: '教程',
-                to: '/docs/此处开始',
+                href: 'https://docusaurus.io/zh-CN/',
               },
             ],
           },
