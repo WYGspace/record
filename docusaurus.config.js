@@ -109,6 +109,27 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+  
+  // label：语言标签。
+  // direction:（ltr默认）或rtl（对于从右到左的语言，如阿拉伯语、希伯来语等）
+  // htmlLang<html lang="...">: 使用的BCP 47 语言标签<link ... hreflang="...">  
+  i18n: {
+    defaultLocale: 'zh',
+    locales: ['zh', 'en'],
+    localeConfigs: {
+      zh: {
+        label: '中文（中国）',
+        direction: 'ltr',
+        htmlLang: 'zh-CN',
+      },
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+    },
+  },
+  
 };
 
 module.exports = config;
