@@ -32,9 +32,9 @@ const sidebars = {
 			label: '技术栈',
 			link: {type: 'generated-index'},
 			items: [
-				'技术栈/Ajax',
-				'技术栈/Promise',
-				'技术栈/Axios',
+				//'技术栈/Ajax',
+				//'技术栈/Promise',
+				//'技术栈/Axios',
 				{
 					type: 'category',
 					label: 'Linux',
