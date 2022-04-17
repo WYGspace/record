@@ -32,6 +32,7 @@ const sidebars = {
 			label: '技术栈',
 			link: {type: 'generated-index'},
 			items: [
+				'技术栈/Java基础',
 				//'技术栈/Ajax',
 				//'技术栈/Promise',
 				//'技术栈/Axios',
