@@ -1,5 +1,5 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// 注意:类型注解允许类型检查和ide自动完成
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
@@ -13,8 +13,8 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'WYGspace', // Usually your GitHub org/user name.
-  projectName: 'record', // Usually your repo name.
+  organizationName: 'WYGspace', // 通常是你的GitHub org/用户名。
+  projectName: 'record', // 通常是你的回购名。
   deploymentBranch: 'gh-pages',
 
   presets: [
@@ -24,12 +24,12 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
+          // 请把这个换成你的回购单。
           editUrl: 'https://github.com/WYGspace/record/blob/main/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
+          // 请把这个换成你的回购单。
           editUrl: 'https://github.com/WYGspace/record/blob/main/',
         },
         theme: {

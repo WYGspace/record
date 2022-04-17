@@ -1,10 +1,10 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * 这里包含的任何CSS都是全局的。经典的模板
+ * 默认情况下绑定Infima。Infima是一个CSS框架
+ * 适用于以内容为中心的网站。
  */
 
-/* You can override the default Infima variables here. */
+/* 您可以在这里重写默认的Infima变量。 */
 :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
@@ -16,7 +16,7 @@
   --ifm-code-font-size: 95%;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* 考虑到可读性，您应该在暗模式下选择较浅的调色板。 */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
