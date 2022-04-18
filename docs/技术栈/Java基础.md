@@ -1622,29 +1622,180 @@ Runtime类代表Java程序的**运行时环境**，可以访问JVM的相关信�
    | StringBuffer(int capacity)     | 构造一个字符串缓冲区，其中没有字符，但是包含指定的初始容 量capacity。 |
    | StringBuffer(String str)       | 构造一个指定字符串内容的字符串缓冲区。                       |
 
-   | 返回类型     | 方法                                         | 说明                                                  |
-   | ------------ | -------------------------------------------- | ----------------------------------------------------- |
-   | StringBuffer | append(boolean b)                            | 将boolean参数的字符串表示形式追加到 序列中。          |
-   | StringBuffer | append(char c)                               | 将char参数的字符串表示形式追加到此 序列。             |
-   | StringBuffer | append(char[] str)                           | 将char数组参数的字符串表示形式追加 到此序列。         |
-   | StringBuffer | append(char[] str, int offset, int len)      | 将char数组参数的子数组的字符串表示 形式追加到此序列。 |
-   | StringBuffer | append(CharSequence s)                       | 将指定的内容附加CharSequence到此序 列。               |
-   | StringBuffer | append(CharSequence s, int start, int end)   | 将指定的子CharSequence序列追加到此 序列。             |
-   | StringBuffer | append(double d)                             | 将double 参数的字符串表示形式追加到 此序列。          |
-   | StringBuffer | append(float f)                              | 将float 参数的字符串表示形式追加到此 序列。           |
-   | StringBuffer | append(int i)                                | 将int 参数的字符串表示形式追加到此序 列。             |
-   | StringBuffer | append(long lng)                             | 将long 参数的字符串表示形式追加到此 序列。            |
-   | StringBuffer | append(Object obj)                           | 附加Object参数的字符串表示形式。                      |
-   | StringBuffer | append(String str)                           | 将指定的字符串追加到此字符序列。                      |
-   | StringBuffer | append(StringBuffer sb)                      | 将指定的内容附加StringBuffer到此序 列。               |
-   | StringBuffer | appendCodePoint(int codePoint)               | 将codePoint参数的字符串表示形式追加 到此序列。        |
-   | int          | capacity()                                   | 返回当前容量。                                        |
-   | char         | charAt(int index)                            | 返回char指定索引处的此序列中的值。                    |
-   | int          | codePointAt(int index)                       | 返回指定索引处的字符（Unicode代码 点）。              |
-   | int          | codePointBefore(int index)                   | 返回指定索引之前的字符（Unicode代码 点）。            |
-   | int          | codePointCount(int beginIndex, int endIndex) | 返回此序列的指定文本范围内的Unicode 代码点数。        |
-   | StringBuffer | delete(int start, int end)                   | 删除此序列的子字符串中的字符。                        |
-   | StringBuffer | deleteCharAt(int index)                      | char按此顺序删除指定位置。                            |
+   | 返回类型     | 方法                                                         | 说明                                                         |
+   | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+   | StringBuffer | append(boolean b)                                            | 将boolean参数的字符串表示形式追加到 序列中。                 |
+   | StringBuffer | append(char c)                                               | 将char参数的字符串表示形式追加到此 序列。                    |
+   | StringBuffer | append(char[] str)                                           | 将char数组参数的字符串表示形式追加 到此序列。                |
+   | StringBuffer | append(char[] str, int offset, int len)                      | 将char数组参数的子数组的字符串表示 形式追加到此序列。        |
+   | StringBuffer | append(CharSequence s)                                       | 将指定的内容附加CharSequence到此序 列。                      |
+   | StringBuffer | append(CharSequence s, int start, int end)                   | 将指定的子CharSequence序列追加到此 序列。                    |
+   | StringBuffer | append(double d)                                             | 将double 参数的字符串表示形式追加到 此序列。                 |
+   | StringBuffer | append(float f)                                              | 将float 参数的字符串表示形式追加到此 序列。                  |
+   | StringBuffer | append(int i)                                                | 将int 参数的字符串表示形式追加到此序 列。                    |
+   | StringBuffer | append(long lng)                                             | 将long 参数的字符串表示形式追加到此 序列。                   |
+   | StringBuffer | append(Object obj)                                           | 附加Object参数的字符串表示形式。                             |
+   | StringBuffer | append(String str)                                           | 将指定的字符串追加到此字符序列。                             |
+   | StringBuffer | append(StringBuffer sb)                                      | 将指定的内容附加StringBuffer到此序 列。                      |
+   | StringBuffer | appendCodePoint(int codePoint)                               | 将codePoint参数的字符串表示形式追加 到此序列。               |
+   | int          | capacity()                                                   | 返回当前容量。                                               |
+   | char         | charAt(int index)                                            | 返回char指定索引处的此序列中的值。                           |
+   | int          | codePointAt(int index)                                       | 返回指定索引处的字符（Unicode代码 点）。                     |
+   | int          | codePointBefore(int index)                                   | 返回指定索引之前的字符（Unicode代码 点）。                   |
+   | int          | codePointCount(int beginIndex, int endIndex)                 | 返回此序列的指定文本范围内的Unicode 代码点数。               |
+   | StringBuffer | delete(int start, int end)                                   | 删除此序列的子字符串中的字符。                               |
+   | StringBuffer | deleteCharAt(int index)                                      | char按此顺序删除指定位置。                                   |
+   | void         | ensureC                                                      | pacity(int minimumCapacity)                                  |
+   | void         | getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) | 字符从此序列复制到目标字符数组中 dst。                       |
+   | int          | indexOf(String str)                                          | 返回指定子字符串第一次出现的字符串中 的索引。                |
+   | int          | indexOf(String str, int fromIndex)                           | 从指定的索引处开始，返回指定子字符串 第一次出现的字符串中的索引。 |
+   | StringBuffer | insert(int offset, boolean b)                                | 将boolea参数的字符串表示形式插入此 序列中。                  |
+   | StringBuffer | insert(int offset, char c)                                   | 将char参数的字符串表示形式插入此序 列中。                    |
+   | StringBuffer | insert(int offset, char[] str)                               | 将char数组参数的字符串表示形式插入 此序列中。                |
+   | StringBuffer | insert(int index, char[] str, int offset, int len)           | 将str数组参数的子数组的字符串表示形 式插入到此序列中。       |
+   | StringBuffer | insert(int dstOffset, CharSequence s)                        | 将指定的内容CharSequence插入此序列 中。                      |
+   | StringBuffer | insert(int dstOffset, CharSequence s, int start, int end)    | 将指定的子CharSequence序列插入此序 列中。                    |
+   | StringBuffer | insert(int offset, double d)                                 | 将double参数的字符串表示形式插入此 序列中。                  |
+   | StringBuffer | insert(int offset, float f)                                  | 将float参数的字符串表示形式插入此序 列中。                   |
+   | StringBuffer | insert(int offset, int i)                                    | 将第二个int 参数的字符串表示形式插入 到此序列中。            |
+   | StringBuffer | insert(int offset, long l)                                   | 将long参数的字符串表示形式插入此序 列中。                    |
+   | StringBuffer | insert(int offset, Object obj)                               | 将Object 参数的字符串表示形式插入此 字符序列。               |
+   | StringBuffer | insert(int offset, String str)                               | 将字符串插入此字符序列。                                     |
+   | int          | lastIndexOf(String str)                                      | 返回指定子字符串最后一次出现在字符串 中的索引。              |
+   | int          | lastIndexOf(String str, int fromIndex)                       | 返回指定子字符串最后一次出现在字符串 中的索引。              |
+   | int          | length()                                                     | 返回该字符串的长度（字符数）。                               |
+   | int          | offsetByCodePoints(int index, int codePointOffset)           | 返回此序列中与代码点给定index的偏移 量的索引codePointOffset。 |
+   | StringBuffer | replace(int start, int end, String str)                      | 用指定的字符替换此序列的子字符串中的 字符String。            |
+   | StringBuffer | reverse()                                                    | 返回此字符序列的反向替换。                                   |
+   | void         | setCharAt(int index, char ch)                                | 指定索引处的字符设置为ch。                                   |
+   | void         | setLength(int newLength)                                     | 设置字符序列的长度。                                         |
+   | CharSequence | subSequence(int start, int end)                              | 返回一个新的字符序列，它是该序列的子 序列。                  |
+   | String       | substring(int start)                                         | 返回一个新的String，包含此字符序列中 当前包含的字符的子序列。 |
+   | String       | substring(int start, int end)                                | 返回一个新的String，包含此序列中当前 包含的字符的子序列。    |
+   | String       | toString()                                                   | 返回表示此序列中数据的字符串。                               |
+
+   - String 类对象不可变，一旦修改 String的值就是隐形的重建了一个新的对象，释放了原 String对象 
+   - StringBuffer和StringBuilder类是可以通过append()、insert()、reverse()....等方法来修改值。创建 的对象是可变 
+   - StringBuffer：线程安全的； 
+   - StringBuilder：线程非安全的 
+   - 字符串连接 String 的 + 比 StringBuffer(StringBuilder) 的 Append() 性能差了很多 
+   - 三者在执行速度方面的比较：StringBuilder > StringBuffer > String
+
+### 4、BigDecimal类
+
+为了能精确表示、计算浮点数，Java提供了BigDecimal类，该类提供了大量的构造器用于创建 BigDecimal对象，包括把所有的基本数值型变量转换成一个BigDecimal对象，也包括利用数字字符串、 数字字符数组来创建BigDecimal对象。
+
+**常用构造器**
+
+| 构造器                 | 说明                                                         |
+| ---------------------- | ------------------------------------------------------------ |
+| BigDecimal(char[] in)  | 将 BigDecimal 的字符数组表示形式转换为 BigDecimal，接受与 BigDecimal(String) 构造方法相同的字符序列。 |
+| BigDecimal(double val) | 将 double 转换为 BigDecimal，后者是 double 的二进制浮点值准确的十 进制表示形式。 |
+| BigDecimal(int val)    | 将 int 转换为 BigDecimal。                                   |
+| BigDecimal(long val)   | 将 long 转换为 BigDecimal。                                  |
+| BigDecimal(String val) | 将 BigDecimal 的字符串表示形式转换为 BigDecimal。            |
+
+**常用方法**
+
+| 修饰符 | 返回值类型 | 方法（形参）                      | 说明                                                         |
+| ------ | ---------- | --------------------------------- | ------------------------------------------------------------ |
+| static | BigDecimal | valueOf(double val)               | 使用 Double.toString(double) 方法提供 的 double 规范的字符串表示形式将 double 转换为 BigDecimal。 |
+| static | BigDecimal | valueOf(long val)                 | 将 long 值转换为具有零标度的 BigDecimal。                    |
+|        | BigDecimal | abs()                             | 返回 BigDecimal，其值为此 BigDecimal 的绝对值，其标度为 this.scale()。 |
+|        | BigDecimal | add(BigDecimal augend)            | 返回一个 BigDecimal，其值为 (this + augend)                  |
+|        | BigDecimal | subtract(BigDecimal subtrahend)   | 返回一个 BigDecimal，其值为 (this - subtrahend)              |
+|        | BigDecimal | multiply(BigDecimal multiplicand) | 返回一个 BigDecimal，其值为 (this × multiplicand)            |
+|        | BigDecimal | divide(BigDecimal divisor)        | 返回一个 BigDecimal，其值为 (this / divisor)                 |
+|        | BigDecimal | pow(int n)                        | 返回其值为 (thisn) 的 BigDecimal                             |
+|        | int        | compareTo(BigDecimal val)         | 将此 BigDecimal 与指定的 BigDecimal 比 较。                  |
+|        | byte       | byteValue()                       | 将此 BigDecimal 转换为 byte，                                |
+|        | byte       | byteValueExact()                  | 将此 BigDecimal 转换为 byte，以检查丢 失的信息。             |
+|        | short      | shortValue()                      | 将此 BigDecimal 转换为 short                                 |
+|        | short      | shortValueExact()                 | 将此 BigDecimal 转换为 short，以检查丢 失的信息。            |
+|        | int        | intValue()                        | 将此 BigDecimal 转换为 int。                                 |
+|        | int        | intValueExact()                   | 将此 BigDecimal 转换为 int，以检查丢失 的信息                |
+|        | long       | longValue()                       | 将此 BigDecimal 转换为 long。                                |
+|        | long       | longValueExact()                  | 将此 BigDecimal 转换为 long，以检查丢 失的信息。             |
+|        | float      | floatValue()                      | 将此 BigDecimal 转换为 float。                               |
+|        | double     | doubleValue()                     | 将此 BigDecimal 转换为 double。                              |
+|        | String     | toString()                        | 返回此 BigDecimal 的字符串表示形式， 如果需要指数，则使用科学记数法。 |
+
+### 5、Date和Calendar类
+
+1. Date类
+
+   Java提供了Date类来处理日期、时间（此处的Date是指java.util包下的Date类，而不是java.sql包下的 Date类），Date对象既包含日期，也包含时间。Date类从JDK1.0起就开始存在了，因为它历史悠久，所 以它的大部分构造器、方法都已经过时，不再推荐使用了。
+
+   **构造器**
+
+   Java.util.Date的构造器还剩下两个构造器，其他都已经**过时**（@Deprecated注解，表示已经不再推荐使 用，使用会有警告，并且可以会导致程序性能或者安全性方面的问题）
+
+   | 构造器          | 说明                                                         |
+   | --------------- | ------------------------------------------------------------ |
+   | Date()          | 分配 Date 对象并初始化此对象，以表示分配它的时间（精确到毫秒）。 |
+   | Date(long date) | 分配 Date 对象并初始化此对象，以表示自从标准基准时间（称为“历元 （epoch）”，即 1970 年 1 月 1 日 00:00:00 GMT）以来的指定毫秒数。 |
+
+   **方法**
+
+   Java.util.Date的方法也剩下几个，其他都过时了
+
+   | 返回值类型 | 方法（形参）                | 说明                                                         |
+   | ---------- | --------------------------- | ------------------------------------------------------------ |
+   | boolean    | after(Date when)            | 测试此日期是否在指定日期之后。                               |
+   | boolean    | before(Date when)           | 测试此日期是否在指定日期之前。                               |
+   | Object     | clone()                     | 返回此对象的副本。                                           |
+   | int        | compareTo(Date anotherDate) | 比较两个日期的顺序。                                         |
+   | boolean    | equals(Object obj)          | 比较两个日期的相等性。                                       |
+   | long       | getTime()                   | 返回自 1970 年 1 月 1 日 00:00:00 GMT 以来此 Date 对象 表示的毫秒数。 |
+   | void       | setTime(long time)          | 设置此 Date 对象，以表示 1970 年 1 月 1 日 00:00:00 GMT 以后 time 毫秒的时间点。 |
+
+   **使用SimpleDateFormat类可以对 Date 和 String 相互转换**
+
+2. Calendar类
+
+   由于Date类过于古老，许多的构造器和方法都已经过时。Java推荐使用Calendar来完成时间计算等操 作。
+
+   **Calendar类中关于时间的属性**
+
+   | 常量                  | 描述                           |
+   | --------------------- | ------------------------------ |
+   | Calendar.YEAR         | 年份                           |
+   | Calendar.MONTH        | 月份                           |
+   | Calendar.DATE         | 日期                           |
+   | Calendar.DAY_OF_MONTH | 日期，和上面的字段意义完全相同 |
+   | Calendar.HOUR         | 12小时制的小时                 |
+   | Calendar.HOUR_OF_DAY  | 24小时制的小时                 |
+   | Calendar.MINUTE       | 分钟                           |
+   | Calendar.SECOND       | 秒                             |
+   | Calendar.DAY_OF_WEEK  | 星期几                         |
+
+   **常用方法**
+
+   | 修饰符 | 返回值类型 | 方法                        | 说明                                                         |
+   | ------ | ---------- | --------------------------- | ------------------------------------------------------------ |
+   | static | Calendar   | getInstance()               | 使用默认时区和语言环境获得一个日历。                         |
+   |        | int        | get(int field)              | 返回给定日历字段的值。                                       |
+   |        | void       | set(int field, int value)   | 将给定的日历字段设置为给定值。该方法有多个重载               |
+   |        | void       | add(int field, int amount)  | 根据日历的规则，为给定的日历字段添加或减去指定 的时间量。    |
+   |        | void       | roll(int field, int amount) | 向指定日历字段添加指定（有符号的）时间量，不更 改更大的字段。 |
+   |        | Date       | getTime()                   | 返回一个表示此 Calendar 时间值（从历元至现在的 毫秒偏移量）的 Date 对象。 |
+   |        | void       | setTime(Date date)          | 使用给定的 Date 设置此 Calendar 的时间。                     |
+
+   **PS:十二个月的英文**
+
+   | 中文   | 简称  | 全称      |
+   | ------ | ----- | --------- |
+   | 一月   | Jan.  | January   |
+   | 二月   | Feb.  | February  |
+   | 三月   | Mar.  | March     |
+   | 四月   | Apr.  | April     |
+   | 五月   | May.  | May       |
+   | 六月   | Jun.  | June      |
+   | 七月   | Jul.  | July      |
+   | 八月   | Aug.  | August    |
+   | 九月   | Sept. | September |
+   | 十月   | Oct.  | October   |
+   | 十一月 | Nov.  | November  |
+   | 十二月 | Dec.  | December  |
 
    
-
