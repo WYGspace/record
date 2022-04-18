@@ -129,7 +129,7 @@ const config = {
       },
     },
   },
-  // titleDelimiter: '🦖', // 默认为 `|`
+  titleDelimiter: '🦖', // 默认为 `|`
   
 };
 
