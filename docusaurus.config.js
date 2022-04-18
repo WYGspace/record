@@ -13,8 +13,8 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'WYGspace', // 通常是你的GitHub org/用户名。
-  projectName: 'record', // 通常是你的回购名。
+  organizationName: 'WYGspace', // 拥有此源的 GitHub 用户或组织。 用于部署命令
+  projectName: 'record', // GitHub 源的名称。 用于部署命令。
   deploymentBranch: 'gh-pages',
 
   presets: [
@@ -129,6 +129,7 @@ const config = {
       },
     },
   },
+  titleDelimiter: '🦖', // 默认为 `|`
   
 };
 
