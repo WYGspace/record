@@ -2057,22 +2057,22 @@ Map接口中键和值一一映射. 可以通过键来获取值。
 
 **常用方法**
 
-| 返回值         | 方法(形参)                  | 说明                                                         |
-| -------------- | --------------------------- | ------------------------------------------------------------ |
-| void           | clear()                     | 从此映射中移除所有映射关系（可选操作）。                     |
-| boolean        | containsKey(Object key)     | 如果此映射包含指定键的映射关系，则返回 true。                |
-| boolean        | containsValue(Object value) | 如果此映射将一个或多个键映射到指定值，则返回 true。          |
-| Set<Map.Entry> | entrySet()                  | 返回此映射中包含的映射关系的 Set 视图。                      |
-| boolean        | equals(Object o)            | 比较指定的对象与此映射是否相等。                             |
-| V              | get(Object key)             | 返回指定键所映射的值；如果此映射不包含该键的 映射关系，则返回 null。 |
-| int            | hashCode()                  | 返回此映射的哈希码值。                                       |
-| boolean        | isEmpty()                   | 如果此映射未包含键-值映射关系，则返回 true。                 |
-| Set            | keySet()                    | 返回此映射中包含的键的 Set 视图。                            |
-| V              | put(K key, V value)         | 将指定的值与此映射中的指定键关联（可选操 作）。              |
-| void           | putAll(Map m)               | 从指定映射中将所有映射关系复制到此映射中（可 选操作）。      |
-| V              | remove(Object key)          | 如果存在一个键的映射关系，则将其从此映射中移 除（可选操作）。 |
-| int            | size()                      | 返回此映射中的键-值映射关系数。                              |
-| Collection     | values()                    | 返回此映射中包含的值的 Collection 视图。                     |
+| 返回值           | 方法(形参)                  | 说明                                                         |
+| ---------------- | --------------------------- | ------------------------------------------------------------ |
+| void             | clear()                     | 从此映射中移除所有映射关系（可选操作）。                     |
+| boolean          | containsKey(Object key)     | 如果此映射包含指定键的映射关系，则返回 true。                |
+| boolean          | containsValue(Object value) | 如果此映射将一个或多个键映射到指定值，则返回 true。          |
+| `Set<Map.Entry>` | entrySet()                  | 返回此映射中包含的映射关系的 Set 视图。                      |
+| boolean          | equals(Object o)            | 比较指定的对象与此映射是否相等。                             |
+| V                | get(Object key)             | 返回指定键所映射的值；如果此映射不包含该键的 映射关系，则返回 null。 |
+| int              | hashCode()                  | 返回此映射的哈希码值。                                       |
+| boolean          | isEmpty()                   | 如果此映射未包含键-值映射关系，则返回 true。                 |
+| Set              | keySet()                    | 返回此映射中包含的键的 Set 视图。                            |
+| V                | put(K key, V value)         | 将指定的值与此映射中的指定键关联（可选操 作）。              |
+| void             | putAll(Map m)               | 从指定映射中将所有映射关系复制到此映射中（可 选操作）。      |
+| V                | remove(Object key)          | 如果存在一个键的映射关系，则将其从此映射中移 除（可选操作）。 |
+| int              | size()                      | 返回此映射中的键-值映射关系数。                              |
+| Collection       | values()                    | 返回此映射中包含的值的 Collection 视图。                     |
 
 **TreeMap类**
 
@@ -2080,13 +2080,13 @@ Map接口中键和值一一映射. 可以通过键来获取值。
 
 | 返回值      | 方法(形参)                 | 说明                                                         |
 | ----------- | -------------------------- | ------------------------------------------------------------ |
-| Map.Entry   | firstEntry()               | 返回一个与此映射中的最小键关联的键-值映射关系；如果映 射为空，则返回 null。 |
+| `Map.Entry` | firstEntry()               | 返回一个与此映射中的最小键关联的键-值映射关系；如果映 射为空，则返回 null。 |
 | K           | firstKey()                 | 返回此映射中当前第一个（最低）键。                           |
-| Map.Entry l | lastEntry()                | 返回与此映射中的最大键关联的键-值映射关系；如果映射为 空，则返回 null。 |
+| `Map.Entry` | lastEntry()                | 返回与此映射中的最大键关联的键-值映射关系；如果映射为 空，则返回 null。 |
 | K           | lastKey()                  | 返回映射中当前最后一个（最高）键。                           |
-| Map.Entry   | higherEntry(K key)         | 返回一个键-值映射关系，它与严格大于给定键的最小键关 联；如果不存在这样的键，则返回 null。 |
+| `Map.Entry` | higherEntry(K key)         | 返回一个键-值映射关系，它与严格大于给定键的最小键关 联；如果不存在这样的键，则返回 null。 |
 | K           | higherKey(K key)           | 返回严格大于给定键的最小键；如果不存在这样的键，则返 回 null。 |
-| Map.Entry   | lowerEntry(K key)          | 返回一个键-值映射关系，它与严格小于给定键的最大键关 联；如果不存在这样的键，则返回 null。 |
+| `Map.Entry` | lowerEntry(K key)          | 返回一个键-值映射关系，它与严格小于给定键的最大键关 联；如果不存在这样的键，则返回 null。 |
 | K           | lowerKey(K key)            | 返回严格小于给定键的最大键；如果不存在这样的键，则返 回 null。 |
 | SortedMap   | headMap(K toKey)           | 返回此映射的部分视图，其键值严格小于 toKey。                 |
 | SortedMap   | subMap(K fromKey, K toKey) | 返回此映射的部分视图，其键值的范围从 fromKey（包括） 到 toKey（不包括）。 |
