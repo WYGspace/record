@@ -1798,4 +1798,1019 @@ Runtime类代表Java程序的**运行时环境**，可以访问JVM的相关信�
    | 十一月 | Nov.  | November  |
    | 十二月 | Dec.  | December  |
 
-   
+### 6、Math类
+
+Java提供了Math工具类来完成复杂的运算，Math类是一个工具类，构造器被private的，无法创建Math 类的对象；Math类中的所有方法都是静态方法（类方法），可以直接通过类名来调用它们。Math类还 提供了两个类变量：PI（圆周率）和E（自然对数的底数）
+
+**两个类变量**
+
+| 类变量 | 说明           |
+| ------ | -------------- |
+| PI     | 圆周率         |
+| E      | 自然对数的底数 |
+
+**常用方法**
+
+| 分类                    | 类变量否 | 返回值类型 | 方法                                      | 说明                                                         |
+| ----------------------- | -------- | ---------- | ----------------------------------------- | ------------------------------------------------------------ |
+| 三角函数                | static   | double     | toDegrees(double angrad)                  | 将弧度转换角度                                               |
+|                         | static   | double     | toRadians(double angdeg)                  | 将角度转换为弧度                                             |
+|                         | static   | double     | acos(double a)                            | 计算反余弦，返回的角度范围在 0.0 到 pi 之间。                |
+|                         | static   | double     | asin(double a)                            | 计算反正弦；返回的角度范围在 - pi/2 到 pi/2 之间。           |
+|                         | static   | double     | atan(double a)                            | 计算反正切；返回的角度范围在 - pi/2 到 pi/2 之间。           |
+|                         | static   | double     | cos(double a)                             | 计算三角余弦。                                               |
+|                         | static   | double     | cosh(double a)                            | 计算值的双曲余弦。                                           |
+|                         | static   | double     | sin(double a)                             | 计算正弦                                                     |
+|                         | static   | double     | sinh(double a)                            | 计算双曲正弦                                                 |
+|                         | static   | double     | tan(double a)                             | 计算三角正切                                                 |
+|                         | static   | double     | tanh(double a)                            | 计算双曲正切                                                 |
+|                         | static   | double     | atan2(double a)                           | 将矩形坐标 (x, y) 转换成极坐标 (r, thet);                    |
+| 取整运算                | static   | double     | **floor(double a)**                       | 取整，返回小于目标数的最大整 数。                            |
+|                         | static   | double     | **ceil(double a)**                        | 取整，返回大于目标数的最小整 数。                            |
+|                         | static   | long       | **round(double a)**                       | 四舍五入取整                                                 |
+| 乘方、 开方、 指数运 算 | static   | double     | **sqrt(double a)**                        | 计算平方根。                                                 |
+|                         | static   | double     | cbrt(double a)                            | 计算立方根。                                                 |
+|                         | double   | double     | exp(double a)                             | 返回欧拉数 e 的n次幂。                                       |
+|                         | static   | double     | hypot(double x, double y)                 | 返回 sqrt(x +y)                                              |
+|                         | static   | double     | IEEEremainder(double f1, double f2)       | 按照 IEEE 754 标准的规定，对两 个参数进行余数运算。          |
+|                         | static   | double     | **pow(double a, double b)**               | 计算乘方                                                     |
+|                         | static   | double     | log(double a)                             | 计算自然对数                                                 |
+|                         | static   | double     | log10(double a)                           | 计算底数为 10 的对数。                                       |
+|                         | static   | double     |                                           | log1p(double x)返回参数与 1 之 和的自然对数。                |
+| 符号相关的方 法         | static   | double     | **abs(double a)**                         | 计算绝对值。                                                 |
+|                         | static   | double     | copySign(double magnitude, double sign)   | 符号赋值，返回带有第二个浮点数 符号的第一个浮点参数。        |
+|                         | static   | double     | signum(double d)                          | 符号函数；如果参数为 0，则返回 0；如果参数大于 0，则返回 1.0；如果参数小于 0，则返回 -1.0。 |
+| 大小比较相关 的方法     | static   | double     | **max(double a, double b)**               | 找出最大值                                                   |
+|                         | static   | double     | **min(double a, double b)**               | 计算最小值                                                   |
+|                         | static   | double     | nextAfter(double start, double direction) | 返回第一个参数和第二个参数之间 与第一个参数相邻的浮点数。    |
+|                         | static   | double     | nextUp(double d)                          | 返回比目标数略大的浮点数                                     |
+|                         | static   | double     | random()                                  | 返回一个伪随机数，该值大于等于 0.0 且小于 1.0。              |
+
+### 7、 Random类
+
+Random类专门用于生成一个**伪随机数**的类，其产生的随机数是根据种子和顺序决定的； ThreadLocalRandom类是Java 7新增的一个类，它是Random的增强版。在并发访问的环境下,保证系统 具有更好的线程安全性。
+
+**构造器**
+
+| 构造器            | 说明                                         |
+| ----------------- | -------------------------------------------- |
+| Random()          | 创建一个新的随机数生成器。                   |
+| Random(long seed) | 使用单个 long 种子创建一个新的随机数生成器。 |
+
+**常用方法**
+
+| 返回值类型 | 方法（形参）            | 说明                                                         |
+| ---------- | ----------------------- | ------------------------------------------------------------ |
+| boolean    | nextBoolean()           | 返回下一个伪随机数，它是取自此随机数生成器序列的均匀分 布的 boolean 值。 |
+| void       | nextBytes(byte[] bytes) | 生成随机字节并将其置于用户提供的 byte 数组中。               |
+| double     | nextDouble()            | 返回下一个伪随机数，它是取自此随机数生成器序列的、在 0.0 和 1.0 之间均匀分布的 double 值。 |
+| float      | nextFloat()             | 返回下一个伪随机数，它是取自此随机数生成器序列的、在 0.0 和 1.0 之间均匀分布的 float 值。 |
+| double     | nextGaussian()          | 返回下一个伪随机数，它是取自此随机数生成器序列的、呈高 斯（“正态”）分布的 double 值，其平均值是 0.0，标准差是 1.0。 |
+| int        | nextInt()               | 返回下一个伪随机数，它是此随机数生成器的序列中均匀分布 的 int 值。 |
+| int        | nextInt(int n)          | 返回一个伪随机数，它是取自此随机数生成器序列的、在 0（包 括）和指定值（不包括）之间均匀分布的 int 值。 |
+| long       | nextLong()              | 返回下一个伪随机数，它是取自此随机数生成器序列的均匀分 布的 long 值。 |
+| void       | setSeed(long seed)      | 使用单个 long 种子设置此随机数生成器的种子。                 |
+
+**为什么说Random生成的随机数是伪随机数？**
+
+只要两个Random对象的种子相同，而且方法的调用顺序也相同，产生的随机数相同;
+
+## 十、Java的集合
+
+Java集合类是一种特别有用的工具类，可用于存储数量不等的对象，并可以实现常用的数据结构，如 栈、队列等。除此之外，Java集合还可用于保存具有映射关系的关联数组。Java集合大致可分为List、 Set、Queue和Map四种体系，其中List代表有序、重复的集合；Set代表无序、不可重复的集合；而 Map则代表具有映射关系的集合，Java5又增加了Queue体系集合，代表一种队列集合实现。
+
+### 1、Java集合概述
+
+为了保存数量不确定的数据，以及保存具有映射关系的数据（也被称为关联数组），Java提供了集合 类。集合类主要负责保存、盛装其他数据，因此集合类也被称为容器类，所有的集合类都位于 java.util 包下。
+
+集合类和数组不一样，数组元素既可以是基本类型的值，也可以是对象（实际上保存的是对象的引用变 量）；而集合里只能保存对象（实际上只是保存对象的引用变量，但通常习惯上认为集合里保存的是对 象）。
+
+Java的集合类主要由两个接口派生而出： Collection和Map， Collection和Map是Java集合框架的根接 口，这两个接口又包含了一些子接口或实现类。如下所示是 Java集合简单结构图
+
+![image-20220418145119607](image/image-20220418145119607.png)
+
+### 2、List集合
+
+List集合代表一个元素有序、可重复的集合，集合中每个元素都有其对应的顺序索引。Lst集合允许使用 重复元素，可以通过索引来访问指定位置的集合元素。List集合默认按元素的添加顺序设置元素的索引， 例如第一次添加的元素索引为0，第二次添加的元素索引为1…
+
+- Vector是线程安全的，ArrayList不是线程安全的。 
+- ArrayList在底层数组不够用时在原来的基础上扩展0.5倍，Vector是扩展1倍。 
+
+PS:Vector是历史遗留问题，现在已经基本不用
+
+**List常用方法**
+
+| 返回值   | 方法(形参)                          | 说明                                                         |
+| -------- | ----------------------------------- | ------------------------------------------------------------ |
+| boolean  | add(E e)                            | 向列表的尾部添加指定的元素。                                 |
+| void     | add(int index, E element)           | 在列表的指定位置插入指定元素。                               |
+| boolean  | addAll(Collection c)                | 添加指定 collection 中的所有元素到此列表的结尾，顺序 是指定 collection 的迭代器返回这些元素的顺序。 |
+| boolean  | addAll(int index, Collection c)     | 将指定 collection 中的所有元素都插入到列表中的指定位 置。    |
+| void     | clear()                             | 从列表中移除所有元素。                                       |
+| boolean  | contains(Object o)                  | 如果列表包含指定的元素，则返回 true。                        |
+| boolean  | containsAll(Collection c)           | 如果列表包含指定 collection 的所有元素，则返回 true。        |
+| boolean  | equals(Object o)                    | 比较指定的对象与列表是否相等                                 |
+| E        | get(int index)                      | 返回列表中指定位置的元素。                                   |
+| int      | indexOf(Object o)                   | 返回此列表中第一次出现的指定元素的索引；如果此列表 不包含该元素，则返回 -1。 |
+| boolean  | isEmpty()                           | 如果列表不包含元素，则返回 true。                            |
+| Iterator | iterator()                          | 返回按适当顺序在列表的元素上进行迭代的迭代器。               |
+| int      | lastIndexOf(Object o)               | 返回此列表中最后出现的指定元素的索引；如果列表不包 含此元素，则返回 -1。 |
+| E        | remove(int index)                   | 移除列表中指定位置的元素。                                   |
+| boolean  | remove(Object o)                    | 从此列表中移除第一次出现的指定元素（如果存在）。             |
+| boolean  | removeAll(Collection c)             | 从列表中移除指定 collection 中包含的其所有元素。             |
+| boolean  | retainAll(Collection c)             | 仅在列表中保留指定 collection 中所包含的元素。               |
+| E        | set(int index, E element)           | 用指定元素替换列表中指定位置的元素。                         |
+| int      | size()                              | 返回列表中的元素数。                                         |
+| List     | subList(int fromIndex, int toIndex) | 返回列表中指定的 fromIndex（包括 ）和 toIndex（不包 括）之间的部分视图。 |
+| Object[] | toArray()                           | 返回按适当顺序包含列表中的所有元素的数组（从第一个 元素到最后一个元素）。 |
+| T[]      | toArray(T[] a)                      | 返回按适当顺序（从第一个元素到最后一个元素）包含列 表中所有元素的数组；返回数组的运行时类型是指定数组 的运行时类型。 |
+
+### 3、Comparable和Comparator
+
+1. Comparable简介
+
+   Comparable是排序接口。若一个类实现了Comparable接口，就意味着该类支持排序。实现了 Comparable接口的类的对象的列表或数组可以通过**Collections.sort**或Arrays.sort进行自动排序。
+
+   此外，实现此接口的对象可以用作有序映射中的键或有序集合中的集合，无需指定比较器。
+
+   此接口只有一个方法compare，比较此对象与指定对象的顺序，如果该对象小于、等于或大于指定 对象，则分别返回负整数、零或正整数。
+
+2. Comparator简介
+
+   Comparator是比较接口，我们如果需要控制某个类的次序，而该类本身不支持排序(即没有实现 Comparable接口)，那么我们就可以建立一个“该类的比较器”来进行排序，这个“比较器”只需要实现 Comparator接口即可。也就是说，我们可以通过实现Comparator来新建一个比较器，然后通过这个比 较器对类进行排序。
+
+   注意： 
+
+   - 若一个类要实现Comparator接口：它一定要实现compare(T o1, T o2) 函数，但可以不实现 equals(Object obj) 函数。 
+   - int compare(T o1, T o2) 是“比较o1和o2的大小”。返回“负数”，意味着“o1比o2小”；返回“零”，意 味着“o1等于o2”；返回“正数”，意味着“o1大于o2”。
+
+3. Comparable和Comparator区别比较
+
+   Comparable是排序接口，若一个类实现了Comparable接口，就意味着“该类支持排序”。 Comparator是比较器，我们若需要控制某个类的次序，可以建立一个“该类的比较器”来进行排序。 Comparable相当于“内部比较器”，而Comparator相当于“外部比较器”。
+
+   用Comparable简单， 只要实现Comparable 接口的对象直接就成为一个可以比较的对象，但是需 要修改源代码。 用Comparator 的好处是不需要修改源代码， 而是另外实现一个比较器， 当某个自定 义的对象需要作比较的时候，把比较器和对象一起传递过去就可以比大小了， 并且在Comparator 里面 用户可以自己实现复杂的可以通用的逻辑，使其可以匹配一些比较简单的对象，那样就可以节省很多重 复劳动了。
+
+### 4、Set集合
+
+Set集合类似于一个罐子，程序可以依次把多个对象“丢进”Set集合，而Set集合通常不能记住元素的 添加顺序。
+
+Set集合不允许包含相同的元素，如果试图把两个相同的元素加入同一个Set集合中，则添加操作失 败，add()方法返回 false，且新元素不会被加入。
+
+**Set常用方法**
+
+| 返回值   | 方法(形参)                | 说明                                                         |
+| -------- | ------------------------- | ------------------------------------------------------------ |
+| boolean  | add(E e)                  | 如果 set 中尚未存在指定的元素，则添加此元素。                |
+| boolean  | addAll(Collection c)      | 如果 set 中没有指定 collection 中的所有元素，则将其添 加到此 set 中。 |
+| void     | clear()                   | 移除此 set 中的所有元素。                                    |
+| boolean  | contains(Object o)        | 如果 set 包含指定的元素，则返回 true。                       |
+| boolean  | containsAll(Collection c) | 如果此 set 包含指定 collection 的所有元素，则返回 true。     |
+| boolean  | equals(Object o)          | 比较指定对象与此 set 的相等性。                              |
+| boolean  | isEmpty()                 | 如果 set 不包含元素，则返回 true。                           |
+| Iterator | iterator()                | 返回在此 set 中的元素上进行迭代的迭代器。                    |
+| boolean  | remove(Object o)          | 如果 set 中存在指定的元素，则将其移除。                      |
+| boolean  | removeAll(Collection c)   | 移除 set 中那些包含在指定 collection 中的元素。              |
+| boolean  | retainAll(Collection c)   | 仅保留 set 中那些包含在指定 collection 中的元素。            |
+| int      | size()                    | 返回 set 中的元素数（其容量）。                              |
+| Object[] | toArray()                 | 返回一个包含 set 中所有元素的数组。                          |
+| T[]      | toArray(T[] a)            | 返回一个包含此 set 中所有元素的数组；返回数组的运行时类型是指定数组的类型。 |
+
+1. HashSet类
+
+   HashSet类是Set接口的典型实现类，大多数时候使用Set集合时就是使用这个实现类。 HashSet类 按Hash算法来存储集合中的元素，因此具有很好的存取和查找性能。
+
+   HashSet类具有以下特点：
+
+   - 不能保证元素的排列顺序，顺序可能与添加顺序不同，顺序也有可能发生变化。 
+
+   - HashSet不是同步的（不是线程安全的），如果多个线程同时访问一个 HashSet，假设有两个或者 两个以上线程同时修改了 HashSet集合时，则必须通过代码来保证其同步。 
+
+   - 集合元素值可以是null，但只能放入一个null。 
+
+     当向 HashSet集合中存入一个元素时， HashSet会调用该对象的 hashCode()方法来得到该对象的 hashCode值，然后根据该hashCode值决定该对象在HashSet中的存储位置。如果有两个元素通过 equals方法比较返回true，但它们的hashCode()方法返回值不相等， HashSet将会把它们存储在 不同的位置，依然可以添加成功。
+
+   HashSet判断元素是否相等的依据：hashCode()相同，equals()方法相同；
+
+2. LinkedHashSet类
+
+   HashSet类还有一个子类 LinkedHashSet， LinkedHashSet集合也是根据元素的 hashCode值来决 定元素的存储位置，但它同时使用链表维护元素的次序，这样使得元素看起来是以插入的顺序保存的。 也就是说，当遍历 LinkedhashSet集合里的元素时， LinkedHashSet将会按元素的添加顺序来访问集合 里的元素。
+
+   LinkedHashSet需要维护元素的插入顺序，因此性能略低于 HashSet的性能，但在迭代访问Set里的 全部元素时将有很好的性能，因为它以链表来维护内部顺序。
+
+3. TreeSet类
+
+   TreeSet是 SortedSet接口的实现类，正如 SortedSet名字所暗示的， TreeSet可以确保集合元素处 于排序状态。与 Set集合相比，TreeSet还提供了如下几个额外的方法。
+
+   | 返回值     | 方法(形参)                         | 说明                                                         |
+   | ---------- | ---------------------------------- | ------------------------------------------------------------ |
+   | Comparator | comparator()                       | 返回对此 set 中的元素进行排序的比较器；如果此 set 使用其元素的自然顺序，则返回 null。 |
+   | E          | first()                            | 返回此 set 中当前第一个（最低）元素。                        |
+   | E          | floor(E e)                         | 返回此 set 中小于等于给定元素的最大元素；如果不存 在这样的元素，则返回 null。 |
+   | E          | higher(E e)                        | 返回此 set 中严格大于给定元素的最小元素；如果不存 在这样的元素，则返回 null。 |
+   | E          | last()                             | 返回此 set 中当前最后一个（最高）元素。                      |
+   | E          | lower(E e)                         | 返回此 set 中严格小于给定元素的最大元素；如果不存 在这样的元素，则返回 null。 |
+   | E          | ceiling(E e)                       | 返回此 set 中大于等于给定元素的最小元素；如果不存 在这样的元素，则返回 null。 |
+   | SortedSet  | headSet(E toElement)               | 返回此 set 的部分视图，其元素严格小于 toElement。            |
+   | SortedSet  | tailSet(E fromElement)             | 返回此 set 的部分视图，其元素大于等于 fromElement。          |
+   | SortedSet  | subSet(E fromElement, E toElement) | 返回此 set 的部分视图，其元素从 fromElement（包 括）到 toElement（不包括）。 |
+
+   由于TreeSet是有序的，也支持Comparable和Comparator两种排序方式
+
+4. 各Set实现类的选择
+
+   HashSet和TreeSet是Set的两个典型实现，如何选择HashSet和TreeSet？
+
+   HashSet的性能总是比TreeSet好（特别是最常用的添加、查询元素等操作），因为TreeSet需要额 外的红黑树算法来维护集合元素的次序。只有当需要一个保持排序的Set时，才应该使用TreeSet，否则**一般都应该使用HashSet**。
+
+   HashSet还有一个子类：LinkedHashSet，对于普通的插入、删除操作，LinkedHashSet比HashSet 要略微慢一点，这是由维护链表所带来的额外开销造成的，但由于有了链表，遍历LinkedHashSet会更快。
+
+   Set的实现类HashSet、TreeSet都是线程不安全的。如果有多个线程同时访问一个Set集合，并且有 超过一个线程修改了该Set集合，则必须手动保证该Set集合的同步性。通常可以通过Collections工具类 的synchronizedSortedSet方法来“包装”该Set集合。
+
+   ```java
+   Set<String> set= Collections.synchronizedSet(new HashSet<String>());
+   ```
+
+### 5、Queue 队列
+
+Queue： 基本上，一个队列就是一个先入先出（FIFO）的数据结构 
+
+Queue接口与List、Set同一级别，都是继承了Collection接口。LinkedList实现了Deque接 口
+
+| 返回值类型 | 方法（形参） | 说明                                                         |
+| ---------- | ------------ | ------------------------------------------------------------ |
+| boolean    | add(E e)     | 将指定的元素插入此队列（如果立即可行且不会违反容量限制），在成 功时返回 true，如果当前没有可用的空间，则抛出 IllegalStateException。 |
+| E          | element()    | 获取，但是不移除此队列的头。                                 |
+| boolean    | offer(E e)   | 将指定的元素插入此队列（如果立即可行且不会违反容量限制）     |
+| E          | peek()       | 获取但不移除此队列的头；如果此队列为空，则返回 null。        |
+| E          | poll()       | 获取并移除此队列的头，如果此队列为空，则返回 null。          |
+| E          | remove()     | 获取并移除此队列的头。                                       |
+
+### 6、Map集合
+
+Map接口中键和值一一映射. 可以通过键来获取值。
+
+- 给定一个键和一个值，你可以将该值存储在一个Map对象. 之后，你可以通过键来访问对应的值。 
+- 当访问的值不存在的时候，方法就会抛出一个NoSuchElementException异常. 
+- 当对象的类型和Map里元素类型不兼容的时候，就会抛出一个 ClassCastException异常。 
+- 当在不允许使用Null对象的Map中使用Null对象，会抛出一个NullPointerException 异常。 
+- 当尝试修改一个只读的Map时，会抛出一个UnsupportedOperationException异常。
+
+**常用方法**
+
+| 返回值         | 方法(形参)                  | 说明                                                         |
+| -------------- | --------------------------- | ------------------------------------------------------------ |
+| void           | clear()                     | 从此映射中移除所有映射关系（可选操作）。                     |
+| boolean        | containsKey(Object key)     | 如果此映射包含指定键的映射关系，则返回 true。                |
+| boolean        | containsValue(Object value) | 如果此映射将一个或多个键映射到指定值，则返回 true。          |
+| Set<Map.Entry> | entrySet()                  | 返回此映射中包含的映射关系的 Set 视图。                      |
+| boolean        | equals(Object o)            | 比较指定的对象与此映射是否相等。                             |
+| V              | get(Object key)             | 返回指定键所映射的值；如果此映射不包含该键的 映射关系，则返回 null。 |
+| int            | hashCode()                  | 返回此映射的哈希码值。                                       |
+| boolean        | isEmpty()                   | 如果此映射未包含键-值映射关系，则返回 true。                 |
+| Set            | keySet()                    | 返回此映射中包含的键的 Set 视图。                            |
+| V              | put(K key, V value)         | 将指定的值与此映射中的指定键关联（可选操 作）。              |
+| void           | putAll(Map m)               | 从指定映射中将所有映射关系复制到此映射中（可 选操作）。      |
+| V              | remove(Object key)          | 如果存在一个键的映射关系，则将其从此映射中移 除（可选操作）。 |
+| int            | size()                      | 返回此映射中的键-值映射关系数。                              |
+| Collection     | values()                    | 返回此映射中包含的值的 Collection 视图。                     |
+
+**TreeMap类**
+
+与 TreeSet类似的是，TreeMap中也提供了一系列根据key顺序访问key-value对的方法
+
+| 返回值      | 方法(形参)                 | 说明                                                         |
+| ----------- | -------------------------- | ------------------------------------------------------------ |
+| Map.Entry   | firstEntry()               | 返回一个与此映射中的最小键关联的键-值映射关系；如果映 射为空，则返回 null。 |
+| K           | firstKey()                 | 返回此映射中当前第一个（最低）键。                           |
+| Map.Entry l | lastEntry()                | 返回与此映射中的最大键关联的键-值映射关系；如果映射为 空，则返回 null。 |
+| K           | lastKey()                  | 返回映射中当前最后一个（最高）键。                           |
+| Map.Entry   | higherEntry(K key)         | 返回一个键-值映射关系，它与严格大于给定键的最小键关 联；如果不存在这样的键，则返回 null。 |
+| K           | higherKey(K key)           | 返回严格大于给定键的最小键；如果不存在这样的键，则返 回 null。 |
+| Map.Entry   | lowerEntry(K key)          | 返回一个键-值映射关系，它与严格小于给定键的最大键关 联；如果不存在这样的键，则返回 null。 |
+| K           | lowerKey(K key)            | 返回严格小于给定键的最大键；如果不存在这样的键，则返 回 null。 |
+| SortedMap   | headMap(K toKey)           | 返回此映射的部分视图，其键值严格小于 toKey。                 |
+| SortedMap   | subMap(K fromKey, K toKey) | 返回此映射的部分视图，其键值的范围从 fromKey（包括） 到 toKey（不包括）。 |
+| SortedMap   | tailMap(K fromKey)         | 返回此映射的部分视图，其键大于等于 fromKey。                 |
+
+由于TreeMap是有序的，也支持Comparable和Comparator两种排序方式。TreeMap主要是Key值排序
+
+### 7、 Java集合工具类：Collections
+
+Java提供了一个操作Set、List和Map等集合的工具类：Collections，该工具类里提供了大量方法对 集合元素进行排序、查询和修改等操作，还提供了对集合对象实现同步控制等方法。
+
+1. 排序操作
+
+   | 修饰符 | 返回值类型 | 方法（形参）                    | 说明                                           |
+   | ------ | ---------- | ------------------------------- | ---------------------------------------------- |
+   | static | void       | reverse(List list)              | 反转指定列表中元素的顺序。                     |
+   | static | void       | shuffle(List list)              | 使用默认随机源对指定列表进行置换。             |
+   | static | void       | sort(List list)                 | 根据元素的自然顺序 对指定列表按升序进行 排序。 |
+   | static | void       | sort(List list, Comparator c)   | 根据指定比较器产生的顺序对指定列表进行 排序。  |
+   | static | void       | swap(List list, int i, int j)   | 在指定列表的指定位置处交换元素。               |
+   | static | void       | rotate(List list, int distance) | 根据指定的距离轮换指定列表中的元素。           |
+
+2. 查找和替换操作
+
+   | 修饰符 | 返回值类型 | 方法（形参）                                 | 说明                                                         |
+   | ------ | ---------- | -------------------------------------------- | ------------------------------------------------------------ |
+   | static | int        | binarySearch(List list, T key)               | 使用二分搜索法搜索指定列表，以获得指定对象。                 |
+   | static | int        | binarySearch(List list, T key,Comparator c)  | 使用二分搜索法搜索指定列表，以获得指定对象。                 |
+   | static | Object     | max(Collection coll)                         | 根据元素的自然顺序，返回给定 collection的最大元素。          |
+   | static | Object     | max(Collection coll,Comparator c)            | 根据指定比较器产生的顺序，返回给定 collection的最大元素。    |
+   | static | Object     | min(Collection coll)                         | 根据元素的自然顺序，返回给定 collection的最小元素。          |
+   | static | Object     | min(Collection coll,Comparator c)            | 根据指定比较器产生的顺序，返回给定 collection的最小元素。    |
+   | static | void       | fill(List list, T obj)                       | 使用指定元素替换指定列表中的所有元素。                       |
+   | static | int        | frequency(Collection c, Object o)            | 返回指定 collection 中等于指定对象的元素数。                 |
+   | static | int        | indexOfSubList(List source, List target)     | 返回指定源列表中第一次出现指定目标列表的起始位置；如果没有出现这样的列表，则返回 -1。 |
+   | static | int        | lastIndexOfSubList(List source, List target) | 返回指定源列表中最后一次出现指定目标列表的起始位置；如果没有出现这样的列表，则返 回 -1。 |
+   | static | boolean    | replaceAll(List list, T oldVal, T newVal)    | 使用另一个值替换列表中出现的所有某一指定值。                 |
+
+3. 同步控制
+
+   Collections类中提供了多个 synchronized...()方法，这些方法可以将指定集合包装成线程同步（线程安 全）的集合，从而可以解决多线程并发访问集合时的线程安全问题。
+
+   Java中常用的集合框架中的实现类 ArrayList、Linkedlist、 HashSet、TreeSet、 HashMap和TreeMap 都是线程不安全的。如果有多个线程访问它们，而且有超过一个的线程试图修改它们，则存在线程安全 的问题。 Collections提供了多个类方法可以把它们包装成线程同步的集合。
+
+### 8、Java集合总结
+
+- List,Set,Map是集合体系中最主要的三个接口。
+
+  其中list和set是继承自collection接口 
+
+  Map也属于集合系统但是与collection接口不同
+
+- list是有序且允许元素重复,允许元素为null,ArrayList、LinkedList和Vector是三个主要的实现类
+
+  (1)、Vector、ArrayList都是以类似数组的形式存储在内存中，LinkedList则以链表的形式进行存 储。 
+
+  (2)、Vector线程安全的(同步)，ArrayList、LinkedList线程不安全的(不同步)。 
+
+  (3)、ArrayList、Vector适合查找，不适合指定位置的插入、删除操作；LinkedList适合指定位置插 入、删除操作，不适合查找。 
+
+  (4)、ArrayList在元素填满容器时会自动扩充容器大小的50%，而Vector则是100%，因此ArrayList 更节省空间
+
+- set是无序，不允许元素重复；HashSet和TreeSet是两个实现类
+
+  (1)、HashSet 基于HashMap实现,HashSet中的数据是无序的，可以放入null，但只能放入一个 null，两者中的值都不能重复， 要求放入的对象必须实现HashCode()方法，放入的对象，是以hashcode码作为标识的 
+
+  (2)、TreeSet 是二差树实现的,Treeset中的数据是自动排好序的，不允许放入null值
+
+- Comparator 和 Comparable 的区别
+
+  Comparator 定义在 类的外部, 此时我们的类的结构不需要有任何变化，从小到大：o1-o2 从大到 小：o2-o1 
+
+  Comparable 定义在 类的内部，耦合性较强 从小到大 ：this-o 从大到小：o-this
+
+## 十一、Java异常处理机制
+
+Java的异常处理机制可以让程序具有极好的容错性，让程序更加健壮。当程序运行出现意外情形时，系 统会自动生成一个 Exception对象来通知程序，从而实现将“业务功能实现代码”和“错误处理代码”分离， 提供更好的可读性。
+
+### 1、使用try...catch捕获异常
+
+Java异常处理机制为：抛出异常，捕捉异常,处理异常。
+
+try...catch语法格式
+
+```java
+try {
+	//业务功能代码
+} catch(异常类1 e1) {
+	//异常处理代码1
+} catch(异常类2 e2) {
+	//异常处理代码1
+}
+...
+catch(异常类n en) {
+	//异常处理代码n
+}
+```
+
+在使用try...catch捕获处理异常时需要注意： 
+
+1. 不要过度使用异常，不能使用异常处理机制来代替正常的流程控制语句 
+2. 异常捕获时，一定要先捕获小异常，再捕获大异常。否则小异常将无法被捕获 
+3. 避免出现庞大的try块 
+4. 避免使用catch(Exception e){} 
+5. 不要忽略异常
+
+**Exception类的常用方法**
+
+| 返回值类型          | 方法名称                                      | 说明                                                         |
+| ------------------- | --------------------------------------------- | ------------------------------------------------------------ |
+| Throwable           | fillInStackTrace()                            | 在异常堆栈跟踪中填充。                                       |
+| Throwable           | getCause()                                    | 返回此 throwable 的 cause； 如果 cause 不存在或未知，则 返回 null。 |
+| String              | getLocalizedMessage()                         | 创建此 throwable 的本地化描 述。                             |
+| String              | getMessage()                                  | 返回此 throwable 的详细消息 字符串。                         |
+| StackTraceElement[] | getStackTrace()                               | 提供编程访问由 printStackTrace() 输出的堆栈 跟踪信息。       |
+| Throwable           | initCause(Throwable cause)                    | 将此 throwable 的 cause 初始 化为指定值。                    |
+| void                | printStackTrace()                             | 将此 throwable 及其追踪输出 至标准错误流。                   |
+| void                | printStackTrace(PrintStream s)                | 将此 throwable 及其追踪输出 到指定的输出流。                 |
+| void                | printStackTrace(PrintWriter s)                | 将此 throwable 及其追踪输出 到指定的 PrintWriter。           |
+| void                | setStackTrace(StackTraceElement[] stackTrace) | 设置将由 getStackTrace() 返 回，并由 printStackTrace() 和 相关方法输出的堆栈跟踪元 素。 |
+| String              | toString()                                    | 返回此 throwable 的简短描 述。                               |
+
+### 2、Java异常体系（错误和异常）
+
+Java把所有的非正常情况分成两种：异常（Exception）和错误（Error），它们都继承Throwable父 类。
+
+Error错误，一般是指与虚拟机相关的问题，如系统崩溃、虚拟机错误、动态链接失败等，这种错误无法 恢复或不可能捕获，将导致应用程序中断。通常应用程序无法处理这些错误，因此应用程序不应该试图 使用catch块来捕获Error对象。在定义该方法时，也无须在其throws子句中声明该方法可能抛出Error及 其任何子类。
+
+![WPS图片](image/image-20220418145119608.png)
+
+### 3、 Java7 多异常捕获
+
+从Java7开始，一个catch块可以捕获多种类型的异常。 
+
+在使用一个catch块捕获多种类型的异常时需要注意：
+
+- 捕获多种类型的异常时，多种异常类型之间用竖线（|）隔开。 
+- 捕获多种类型的异常时，异常变量有隐式的final修饰，因此程序不能对异常变量重新赋值。
+
+### 4、finally块
+
+finally块一般用来关闭物理资源（数据库连接，网络连接，磁盘文件等），这些物理资源必须显式关 闭。除非在try块、catch块中调用了退出虚拟机的方法（ System.exit(0); ），否则不管在try块、 catch块中执行怎样的代码，出现怎样的情况，异常处理的finally块一定会被执行。
+
+### 5、Checked异常和Runtime异常
+
+Java的异常被分为两大类：**Checked异常**和**Runtime异常（运行时异常）**。
+
+- Runtime异常：所有的RuntimeException类及其子类的实例； 
+- Checked异常：不是RuntimeException类及其子类的异常实例。
+
+**只有Java语言提供了Checked异常**，其他语言都没有提供Checked异常。Java认为Checked异常都是可 以被处理（修复）的异常，所以Java程序必须显式处理Checked异常。如果程序没有处理Checked异 常，该程序在编译时就会发生错误，无法通过编译。
+
+Checked异常体现了Java的设计哲学：没有完善错误处理的代码根本就不会被执行。
+
+Runtime异常则更加灵活，Runtime异常无须显式声明抛出，如果程序需要捕获Runtime异常，也可以 使用try...catch块来实现。
+
+### 6、 使用throws抛出异常
+
+使用throws声明抛出异常的思路是，当前方法不知道如何处理这种类型的异常，该异常应该由上级调用 者处理；如果main方法也不知道如何处理这种类型的异常，也可以使用throws声明抛出异常，该异常将 交给JVM处理。JVM对异常的处理方法是，打印异常的跟踪栈信息，并中止程序运行。
+
+throws声明抛出异常的格式：
+
+```java
+throws 异常类1,异常类2,异常类3,...
+```
+
+### 7、使用throw抛出异常
+
+Java也允许程序自行抛出异常，自行抛出异常使用throw语句来完成（注意此处的throw没有后面的s）
+
+如果需要在程序中自行抛出异常，则应使用throw语句，throw语句可以单独使用，throw语句抛出的不 是异常类，而是一个异常实例，而且每次只能抛出一个异常实例。
+
+throw语句的语法格式：
+
+```java
+throw 异常实例；
+```
+
+### 8、 自定义异常类
+
+用户自定义异常都应该继承Exception基类；如果希望自定义Runtime异常，则应该继承 RuntimeException基类。定义异常类时通常需要提供两个构造器：一个是无参数的构造器；另一个是带 个字符串参数的构造器，这个字符串将作为该异常对象的描述信息（也就是异常对象的getMessage()方 法的返回值）。
+
+## 十二、输入/输出（IO）
+
+IO（输入/输出）是比较抽象的，看不到明显的运行效果，但输入和输出是所有程序都必需的部分。 使用输入机制，允许程序读取外部数据（包括来自磁盘、光盘等存储设备的数据、来自网络的数据）、 用户输入数据；使用输出机制，允许程序记录运行状态，将程序数据输出到磁盘、光盘等存储设备中和 网络其他设备中。
+
+Java的IO通过java.io包下的类和接口来支持，在java.io包下主要包括输入流、输出流两种IO流，每 种输入、输出流又可分为字节流和字符流两大类。其中字节流以字节为单位来处理输入、输出操作，而 字符流则以字符来处理输入、输出操作。除此之外Java的IO流使用了一种装饰器设计模式，它将IO流分 成底层节点流和上层处理流，其中节点流用于和底层的物理存储节点直接关联（不同的物理节点获取节 点流的方式可能存在一定的差异），但程序可以把不同的物理节点流包装成统一的处理流，从而允许程 序使用统一的输入、输出代码来读取不同的物理存储节点的资源。
+
+### 1、File类
+
+File类是java.io包下代表与平台无关的文件和目录的类。在程序中操作文件和目录，都可以通过File 类来完成。需要注意的是，不管是文件还是目录都是使用File来操作的，File能新建、删除、重命名文件 和目录，但是File不能访问文件内容本身。如果需要访问文件内容本身，则需要使用输入/输出流。
+
+**构造器**
+
+| 构造器                            | 说明                                                         |
+| --------------------------------- | ------------------------------------------------------------ |
+| File(String pathname)             | 通过将给定路径名字符串转换为抽象路径名来创建一个新 File 实 例。 |
+| File(String parent, String child) | 根据 parent 路径名字符串和 child 路径名字符串创建一个新 File 实例。 |
+| File(File parent, String child)   | 根据 parent 抽象路径名和 child 路径名字符串创建一个新 File 实 例。 |
+| File(URI uri)                     | 通过将给定的 file: URI 转换为一个抽象路径名来创建一个新的 File 实例。 |
+
+**常用方法**
+
+| 分类               | (修饰符) 返回值 | 方法名                                                       | 说明                                                         |
+| ------------------ | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 访问名称与路径相关 | String          | getName()                                                    | 返回由此抽象路径名表示的文件或目录的名称。                   |
+|                    | String          | getPath()                                                    | 将此抽象路径名转换为一个路径名字符串。                       |
+|                    | String          | getParent()                                                  | 返回此抽象路径名父目录的路径名字符串； 如果此路径名没有指定父目录，则返回 null。 |
+|                    | File            | getParentFile()                                              | 返回此抽象路径名父目录的抽象路径名；如 果此路径名没有指定父目录，则返回 null。 |
+|                    | File            | getAbsoluteFile()                                            | 返回此抽象路径名的绝对路径名形式。                           |
+|                    | String          | getAbsolutePath()                                            | 返回此抽象路径名的绝对路径名字符串。                         |
+| 检测相关方法       | boolean         | exists()                                                     | 测试此抽象路径名表示的文件或目录是否存在。                   |
+|                    | boolean         | canRead()                                                    | 测试应用程序是否可以读取此抽象路径名表示的文件。             |
+|                    | boolean         | canWrite()                                                   | 测试应用程序是否可以修改此抽象路径名表示的文件。             |
+|                    | boolean         | canExecute()                                                 | 测试应用程序是否可以执行此抽象路径名表示的文件。             |
+|                    | boolean         | isHidden()                                                   | 测试此抽象路径名指定的文件是否是一个隐藏文件。               |
+|                    | boolean         | isFile()                                                     | 测试此抽象路径名表示的文件是否是一个标准文件。               |
+|                    | boolean         | isDirectory()                                                | 测试此抽象路径名表示的文件是否是一个目录。                   |
+|                    | boolean         | isAbsolute()                                                 | 测试此抽象路径名是否为绝对路径名。                           |
+| 获取文件信息       | long            | length()                                                     | 返回由此抽象路径名表示的文件的长度。                         |
+|                    | long            | lastModified()                                               | 返回此抽象路径名表示的文件最后一次被修改的时间。             |
+| 操作相关           | boolean         | createNewFile()                                              | 当且仅当不存在具有此抽象路径名指定名称 的文件时，不可分地创建一个新的空文件。 |
+|                    | static File     | createTempFile(String prefix, String suffix)                 | 在默认临时文件目录中创建一个空文件，使 用给定前缀和后缀生成其名称。 |
+|                    | static File     | createTempFile(String prefix, String suffix, File directory) | 在指定目录中创建一个新的空文件，使用给 定的前缀和后缀字符串生成其名称。 |
+|                    | boolean         | delete()                                                     | 删除此抽象路径名表示的文件或目录                             |
+|                    | void            | deleteOnExit()                                               | 在虚拟机终止时，请求删除此抽象路径名表 示的文件或目录。      |
+|                    | boolean         | renameTo(File dest)                                          | 重新命名此抽象路径名表示的文件。                             |
+|                    | boolean         | mkdir()                                                      | 创建此抽象路径名指定的目录。                                 |
+| 子文件/目录相关    | String[]        | list()                                                       | 返回一个字符串数组，这些字符串指定此抽 象路径名表示的目录中的文件和目录。 |
+|                    | String[]        | list(FilenameFilter filter)                                  | 返回一个字符串数组，这些字符串指定此抽 象路径名表示的目录中满足指定过滤器的文 件和目录。 |
+|                    | File[]          | listFiles()                                                  | 返回一个抽象路径名数组，这些路径名表示 此抽象路径名表示的目录中的文件和目录。 |
+|                    | File[]          | listFiles(FileFilter filter)                                 | 返回抽象路径名数组，这些路径名表示此抽 象路径名表示的目录中满足指定过滤器的文 件和目录。 |
+|                    | File[]          | listFiles(FilenameFilter filter)                             | 返回抽象路径名数组，这些路径名表示此抽 象路径名表示的目录中满足指定过滤器的文 件和目录。 |
+|                    | static File[]   | listRoots()                                                  | 列出可用的文件系统根。                                       |
+
+### 2、了解Java IO流
+
+Java的IO流是实现输入/输出的基础，它可以方便地实现数据的输入/输出操作，在Java中把不同的输入/ 输出源（键盘、文件、网络连接等）抽象表述为“流”（stream），通过流的方式允许Java程序使用相同 的方式来访问不同的输入输出源。 stream是从起源（source）到接收（sink）的有序数据。 Java把所有传统的流类型（类或抽象类）都放在java.io包中，用以实现输入输出功能。
+
+流的分类
+
+- 输入流和输出流
+
+  按照流的流向来分，可以分为输入流和输出流。输入、输出都是从程序运行所在内存的角度来划分 的。
+
+  - 输入流：只能从中读取数据，而不能向其写入数据。由**InputStream**和**Reader**作为基类 
+  - 输出流：只能向其写入数据，而不能从中读取数据。由**OutputStream**和**Writer**作为基类
+
+- 字节流和字符流
+
+  字节流和字符流的用法几乎完全一样，区别在于字节流和字符流所操作的数据单元不同。
+
+  - 字节流操作的数据单元是8位的字节，由InputStream和OutputStream作为基类。 
+  - 字符流操作的数据单元是16位的字符，由 Reader和 Writer作为基类。
+
+- 节点流和处理流
+
+  按照流的角色来分，可以分为节点流和处理流。
+
+  - 节点流：可以从向一个特定的IO设备（如磁盘、网络）读/写数据的流。 
+  - 处理流：用于对一个已存在的流进行连接或封装，通过封装后的流来实现数据读/写功能
+    - 使用处理流的优势：
+      1. 对开发人员来说，使用处理流进行输入/输出操作更简单； 
+      2. 使用处理流的执行效率更高。
+
+流的概念模型
+
+![image-20220418175023285](image/image-20220418175023285.png)
+
+| 分类       | 字节输入流                 | 字节输出流                  | 字符输入流            | 字符输出流            |
+| ---------- | -------------------------- | --------------------------- | --------------------- | --------------------- |
+| 抽象基类   | *<u>InputSiream</u>*       | *<u>OutputStream</u>*       | <u>*Reader*</u>       | *<u>Writer</u>*       |
+| 访问文件   | ==FilelnputStream==        | ==FileOutputStream==        | ==FileReader==        | ==FileWriter==        |
+| 访问数组   | ==ByteArraylnputStream==   | ==ByteArrayOutputStream==   | ==CharArrayReader==   | ==CharArrayWriter==   |
+| 访问管道   | ==PipedlnputStream==       | ==PipedOutputStream==       | ==PipedReader==       | ==PipedWriter==       |
+| 访问字符串 |                            |                             | ==StringReader==      | ==StringWriler==      |
+| 缓冲流     | BufferedlnputStrcam        | BufferedOuStream            | BufferedReader        | BufferedWriter        |
+| 转换流     |                            |                             | InputStreamReader     | OutputStreamWriter    |
+| 对象流     | ObjectlnputStream          | ObjectOutputStream          |                       |                       |
+| 抽象基类   | *<u>FilterInputStream</u>* | *<u>FilterOutputStream</u>* | *<u>FilterReader</u>* | *<u>FilterWriter</u>* |
+| 打印流     |                            | PrintStream                 |                       | PrintWriter           |
+| 推回输入法 | PushbacklnputStream        |                             | PushbackReader        |                       |
+| 特殊流     | DatalnputStream            | DataOutpStream              |                       |                       |
+
+注：倾斜 + 下划线表示抽象类，无法创建实例。高亮的表示字节流，必须直接与指定的物理节点关联。
+
+Java的IO流共涉及40多个类，这些类看上去芜杂而凌乱，但实际上非常规则，而且彼此之间存在非常紧 密的联系Java的IO流的40多个类都是从如下4个抽象基类派生的。
+
+- InputStream/Reader：所有输入流的基类，前者是字节输入流，后者是字符输入流。 
+- OutputStream/Writer：所有输出流的基类，前者是字节输出流，后者是字符输出流
+
+对于InputStream和Reader而言，它们把输入设备抽象成一个“水管”，这个水管里的每个“水滴”依次排 列，如下图所示：
+
+![image-20220418184909636](image/image-20220418184909636.png)
+
+对于OutputStream和Writer而言，它们同样把输出设备抽象成一个“水管”，只是这个水管里没有任何水 滴，如下图所示：
+
+![image-20220418184935809](image/image-20220418184935809.png)
+
+### 3、字节流和字符流
+
+字节流和字符流的操作方式几乎完全一样，区别只是操作的数据单元不同而已。字节流操作的数据单元 是字节，字符流操作的数据单元是字符。
+
+1. InputStream和Reader
+
+   InputStream和Reader是所有输入流的抽象基类，它们的方法是所有输入流都可使用的方法。
+
+   **InputStream类的方法**
+
+   | 修饰符/返回值类型 | 方法名                           | 说明                                                         |
+   | ----------------- | -------------------------------- | ------------------------------------------------------------ |
+   | int               | available()                      | 返回此输入流下一个方法调用可以不受阻塞地从此输入流读 取（或跳过）的估计字节数。 |
+   | void              | close()                          | 关闭此输入流并释放与该流关联的所有系统资源。                 |
+   | void              | mark(int readlimit)              | 在此输入流中标记当前的位置。                                 |
+   | boolean           | markSupported()                  | 测试此输入流是否支持 mark 和 reset 方法。                    |
+   | abstract int      | read()                           | 从输入流中读取数据的下一个字节。                             |
+   | int               | read(byte[] b)                   | 从输入流中读取一定数量的字节，并将其存储在缓冲区数组 b 中。  |
+   | int               | read(byte[] b, int off, int len) | 将输入流中最多 len 个数据字节读入 byte 数组。                |
+   | void              | reset()                          | 将此流重新定位到最后一次对此输入流调用 mark 方法时的 位置。  |
+   | long              | skip(long n)                     | 跳过和丢弃此输入流中数据的 n 个字节。                        |
+
+   **Reader类的方法**
+
+   | 修饰符/返回值类型 | 方法名                              | 说明                               |
+   | ----------------- | ----------------------------------- | ---------------------------------- |
+   | abstract void     | close()                             | 关闭该流并释放与之关联的所有资源。 |
+   | void              | mark(int readAheadLimit)            | 标记流中的当前位置。               |
+   | boolean           | markSupported()                     | 判断此流是否支持 mark() 操作。     |
+   | int               | read()                              | 读取单个字符。                     |
+   | int               | read(char[] cbuf)                   | 将字符读入数组。                   |
+   | bstract int       | read(char[] cbuf, int off, int len) | 将字符读入数组的某一部分。         |
+   | int               | read(CharBuffer target)             | 试图将字符读入指定的字符缓冲区。   |
+   | boolean           | ready()                             | 判断是否准备读取此流。             |
+   | void              | reset()                             | 重置该流。                         |
+   | long              | skip(long n)                        | 跳过字符。                         |
+
+   InputStream和Reader的方法基本一致，只是InputStream读取的是字节，使用的参数是byte数组 （byte[]），而Reader读取的是字符，使用的参数是char数组(char[])
+
+   InputStream和Reader都是抽象类，本身不能创建实例，但它们分别有一个用于读取文件的输入流： FileInputStream和 FileReader，它们都是节点流需要直接和指定文件关联。
+
+2. OutputStream和Writer
+
+   OutputStream和Write是所有输出流的基类，它们的方法也是非常类似的，它们的方法是所有输出流都 可使用的方法。
+
+   **OutputStream类的方法**
+
+   | 修饰符/返回值类型 | 方法名                            | 说明                                                         |
+   | ----------------- | --------------------------------- | ------------------------------------------------------------ |
+   | void              | close()                           | 关闭此输出流并释放与此流有关的所有系统资源。                 |
+   | void              | flush()                           | 刷新此输出流并强制写出所有缓冲的输出字节。                   |
+   | void              | write(byte[] b)                   | 将 b.length 个字节从指定的 byte 数组写入此输出流。           |
+   | void              | write(byte[] b, int off, int len) | 将指定 byte 数组中从偏移量 off 开始的 len 个字节写入此输出流。 |
+   | abstract void     | write(int b)                      | 将指定的字节写入此输出流。                                   |
+
+   **Writer类的方法**
+
+   | 修饰符/返回值类型 | 方法名                                       | 说明                                               |
+   | ----------------- | -------------------------------------------- | -------------------------------------------------- |
+   | Writer            | append(char c)                               | 将指定字符添加到此 writer。                        |
+   | Writer            | append(CharSequence csq)                     | 将指定字符序列添加到此 writer。                    |
+   | Writer            | append(CharSequence csq, int start, int end) | 将指定字符序列的子序列添加到此 writer.Appendable。 |
+   | abstract void     | close()                                      | 关闭此流，但要先刷新它。                           |
+   | abstract void     | flush()                                      | 刷新该流的缓冲。                                   |
+   | void              | write(char[] cbuf)                           | 写入字符数组。                                     |
+   | abstract void     | write(char[] cbuf, int off, int len)         | 写入字符数组的某一部分。                           |
+   | void              | write(int c)                                 | 写入单个字符。                                     |
+   | void              | write(String str)                            | 写入字符串。                                       |
+   | void              | write(String str, int off, int len)          | 写入字符串的某一部分。                             |
+
+### 4、打印流
+
+在整个IO包中，打印流是输出信息做方便的类，主要包含字节打印流(PrintStream)和字符打印流 (PrintWriter)。打印流提供了非常方便的打印功能，可以打印任何的数据类型，例如：小数、整数、字 符串等等。
+
+打印流只有输出没有输入。是 一种 处理流。
+
+| 返回值类型  | 方法/构造器                                                  | 说明                                                         |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 构造器      | PrintStream(File file) <br />PrintWriter(File file)          | 构造方法 通过一个File对象实例化 PrintStream/PrintWriter类    |
+|             | PrintStream(OutputStream out) <br />PrintWriter (Writer out) | 构造方法 接收OutputStream对象，实例化 PrintStream类 <br />接收Writer对象，实例化PrintWriter类 |
+|             | PrintStream(String fileName) <br />PrintWriter(String fileName) | 构造方法 接收文件名称，实例化 PrintStream/PrintWriter类      |
+| void        | print(boolean b)                                             | 此方法被重载很多次，输出任意数据。 boolean、char、int、long、float、double、 char[]、String、Object |
+| void        | println(boolean b)                                           | 此方法被重载很多次，输出任意数据后换行。 boolean、char、int、long、float、double、 char[]、String、Object |
+| PrintStream | printf(String format, Object ... args)                       | 用于格式化输出                                               |
+| void        | close()                                                      | 关闭此流，但要先刷新它。                                     |
+| void        | flush()                                                      | 刷新该流的缓冲。                                             |
+| void        | close()                                                      | 关闭此输出流并释放与此流有关的所有系统资 源。                |
+
+**格式字符**
+
+格式字符用以指定输出项的数据类型和输出格式。
+
+- d格式：用来输出十进制整数。有以下几种用法： 
+
+  %d：按整型数据的实际长度输出。 
+
+  %md：m为指定的输出字段的宽度。如果数据的位数小于m，则左端补以空格，若大于m，则按实 际位数输出。 
+
+  %ld：输出长整型数据。
+
+- o格式：以无符号八进制形式输出整数。对长整型可以用"%lo"格式输出。同样也可以指定字段宽度 用“%mo”格式输出。
+
+- x格式：以无符号十六进制形式输出整数。对长整型可以用"%lx"格式输出。同样也可以指定字段宽 度用"%mx"格式输出。
+
+- c格式：输出一个字符。
+
+- s格式：用来输出一个串。有几中用法 
+
+  %s：例如:printf("%s", "CHINA")输出"CHINA"字符串（不包括双引号）。 
+
+  %ms：输出的字符串占m列，如字符串本身长度大于m，则突破获m的限制,将字符串全部输出。若 串长小于m，则左补空格。 
+
+  %-ms：如果串长小于m，则在m列范围内，字符串向左靠，右补空格。 
+
+  %m.ns：输出占m列，但只取字符串中左端n个字符。这n个字符输出在m列的右侧，左补空格。 
+
+  %-m.ns：其中m、n含义同上，n个字符输出在m列范围的左侧，右补空格。如果n>m，则自动取n 值，即保证n个字符正常输出。
+
+- f格式：用来输出实数（包括单、双精度），以小数形式输出。有以下几种用法： 
+
+  %f：不指定宽度，整数部分全部输出并输出6位小数。 
+
+  %m.nf：输出共占m列，其中有n位小数，如数值宽度小于m左端补空格。 
+
+  %-m.nf：输出共占n列，其中有n位小数，如数值宽度小于m右端补空格。
+
+### 5、 转换流
+
+输入/输出流体系中还提供了两个转换流，这两个转换流用于将字节流转换成字符流，其中 InputStreamReader将字节输入流转换成字符输入流， OutputStreamWriter将字节输出流转换成字符 输出流。
+
+**InputStreamReader**
+
+| 返回值类型 | 方法/构造器                                           | 说明                                               |
+| ---------- | ----------------------------------------------------- | -------------------------------------------------- |
+| 构造器     | InputStreamReader(InputStream in)                     | InputStream换成字符输入流,默认字 符编码字符集      |
+|            | public InputStreamReader(InputStream in, Charset cs)  | InputStream换成字符输入流, 指定字 符编码字符集     |
+|            | InputStreamReader(InputStream in, String charsetName) | InputStream换成字符输入流, 指定字 符编码字符集名称 |
+| String     | getEncoding()                                         | 获取字符编码字符集名称                             |
+| int        | read()                                                | 读取单个字符。                                     |
+| int        | read(char cbuf[], int offset, int length)             | 将字符读入数组的某一部分。                         |
+| boolean    | ready()                                               | 判断是否准备读取此流。                             |
+| void       | close()                                               | 关闭流                                             |
+
+**OutputStreamWriter**
+
+| 返回值类型 | 方法/构造器                                              | 说明                                               |
+| ---------- | -------------------------------------------------------- | -------------------------------------------------- |
+| 构造器     | OutputStreamWriter(OutputStream out)                     | OutputStream换成字符输出流,默认字 符编码字符集     |
+|            | OutputStreamWriter(OutputStream out, Charset cs)         | OutputStream换成字符输出流,指定字 符编码字符集     |
+|            | OutputStreamWriter(OutputStream out, String charsetName) | OutputStream换成字符输出流,指定字 符编码字符集名称 |
+| String     | getEncoding()                                            | 获取字符编码字符集名称                             |
+| void       | write(int c)                                             | 输出一个字符                                       |
+| void       | write(char cbuf[], int off, int len)                     | 输出字符数组                                       |
+| void       | write(String str)                                        | 输出字符串                                         |
+| void       | flush()                                                  | 刷新该流的缓冲。                                   |
+| void       | close()                                                  | 关闭此流，                                         |
+
+### 6、访问数组
+
+ByteArrayOutputStream和ByteArrayInputStream类是在创建它的实例时，程序内部创建一个byte型 别数组的缓冲区，然后利用ByteArrayOutputStream和ByteArrayInputStream的实例向数组中写入或 读出byte型数据。在网络传输中我们往往要传输很多变量，我们可以利用ByteArrayOutputStream把所 有的变量收集到一起，然后一次性把数据发送出去。
+
+ByteArrayOutputStream:可以捕获内存缓冲区的数据，转换成字节数组。 
+ByteArrayInputStream:可以将字节数组转化为输入流
+
+CharArrayReader、CharArrayWriter的使用与ByteArrayOutputStream、ByteArrayInputStream差不 多。
+
+### 7、访问字符串
+
+StringReader：用来将字符串转换成字符输入流。然后使用字符输入流提供的方式进行操作，也可以提 供给其他高级字符输入流来使用。如可以将该字符输入流提供给BufferedReader输入流使用。
+
+StringWriter：在内存中缓存读取到的所有字符串，然后使用通过toString方法一次性全部输出字符串。
+
+### 8、缓冲流
+
+在读写数据时，让数据在缓冲区能减少系统实际对原始数据来源的存取次数，因为一次能做多个数据单 位的操作。相较而言，对于直接从文件读取数据或将数据写入文件，比起缓冲区的读写要慢多了。所以 使用缓冲区的流，一般都会比没有缓冲区的流效率更高。拥有缓冲区的流被称为缓冲流，包括 BufferedInputStream、BufferedOutputStream类和BufferedReader、BufferedWriter类。缓冲流把数据从原始流成块读入或把数据积累到一个大数据块后再成批写出，通过减少通过资源的读写次数来加 快程序的执行。
+
+**BufferedReader类**
+
+BufferedReader是Reader的子类，可以Reader的方法。从字符输入流中读取文本，缓冲各个字符，从 而实现字符、数组和行的高效读取。下面是BufferedReader的够构造器和特有的方法
+
+| 构造器/方法名                      | 作用                                                |
+| ---------------------------------- | --------------------------------------------------- |
+| BufferedReader(Reader in)          | 创建一个使用默认大小输出缓冲区的缓冲字符输入流对象  |
+| BufferedReader(Reader out，int sz) | 创建一个使用指定大小输出缓冲区的缓冲字符输入流对 象 |
+| readLine()                         | 读取一个文本行                                      |
+
+**BufferedWriterr类**
+
+BufferedWriter类是Writer的子类。
+
+| 构造器/方法名                      | 作用                                               |
+| ---------------------------------- | -------------------------------------------------- |
+| BufferedWriter(Writer out)         | 创建一个使用默认大小输出缓冲区的缓冲字符输出流对象 |
+| BufferedWriter(Writer out，int sz) | 创建一个使用指定大小输出缓冲区的缓冲字符输出流对象 |
+| newLine()                          | 写入一个行分隔符                                   |
+
+### 9、RandomAccessFile类
+
+RandomAccessFile是Java输入/输出流体系中功能最丰富的文件内容访问类，它提供了众多的方法 来访 问文件内容，它既可以读取文件内容，也可以向文件输出数据。RandomAccessFile支持“随机访问”的方 式，程序可以直接跳转到文件的任意地方来读写数据。
+
+RandomAccessFile四种访问模式：
+
+- "r":以只读方式打开指定文件。如果试图对该RandomAccessFile执行写入方法，都将抛出 IOException 异常。
+- "rw":以读、写方式打开指定文件。如果该文件尚不存在，则尝试创建该文件。
+- "rws”：以读、写方式打开指定文件。相对于"rw"模式，还要求对文件的内容或元数据的每个更新 都同步写入到底层存储设备。
+- "rwd": 以读、写方式打开指定文件。相对于"rw"模式，还要求对文件的内容的每个更新都同步写入 到底层存储设备。
+
+元数据是文件的附加属性，如文件大小、创建时间、所有者等信息。
+
+### 10、对象序列化
+
+对象序列化的目标是将对象保存到磁盘中，或允许在网络中直接传输对象。对象序列化机制允许把内存 中的Java对象转换成平台无关的二进制流，从而允许把这种二进制流持久地保存在磁盘上，通过网络将 这种二进制流传输到另一个网络节点。其他程序一旦获得了这种二进制流（无论是从磁盘中获取的，还 是通过网络获取的），都可以将这种二进制流恢复成原来的Java对象。
+
+**序列化的含义和意义**
+
+序列化机制允许将实现序列化的Java对象转换成字节序列，这些字节序列可以保存在磁盘上，或通过网 络传输，以备以后重新恢复成原来的对象。序列化机制使得对象可以脱离程序的运行而独立存在。 对象的序列化（Serialize）指将一个Java对象写入IO流中，与此对应的是，对象的反序列化 （Deserialize）则指从IO流中恢复该Java对象如果需要让某个对象支持序列化机制，则必须让它的类是 可序列化的（serializable）。
+
+为了让某个类是可序列化的，该类必须实现如下两个接口之一：
+
+- Serializable（常用）
+
+- ExternalizableJava 
+
+  很多类已经实现了Serializable，该接口是一个标记接口，实现该接口无须实现任何方法，它只是表明该类的实例是可序列化的。 
+
+  所有可能在网络上传输的对象的类都应该是可序列化的，否则程序将会出现异常。
+
+### 11、Properties类
+
+Properties 类是Java中操作配置文件的类
+
+## 十三、Java类加载机制和反射机制
+
+### 1、Java类加载机制
+
+jvm把class文件加载到内存，并对数据进行校验、解析和初始化，最终形成jvm可以直接使用的java类型 的过程。
+
+1. 加载:将class文件字节码内容加载到内存中，并将这些静态数据转换成方法区中的运行时数据结 构，在堆中生成一个代表这个类的java.lang.Class对象，作为方法区类数据的访问入口。 
+2. 链接:将java类的二进制代码合并到jvm的运行状态之中的过程,链接过程又分为3个过程： 
+   - 验证：确保加载的类信息符合jvm规范，没有安全方面的问题。 
+   - 准备：正式为类变量（static变量）分配内存并设置类变量初始值的阶段，这些内存都将在方 法区中进行分配。 
+   - 解析：虚拟机常量池内的符号引用替换为直接引用的过程。（比如String s ="aaa",转化为 s的 地址指向“aaa”的地址） 
+3. 初始化:初始化阶段是执行类构造器方法的过程。类构造器方法是由编译器自动收集类中的所有类变 量的赋值动作和静态语句块（static块）中的语句合并产生的。 
+   - 当初始化一个类的时候，如果发现其父类还没有进行过初始化，则需要先初始化其父类的初始 化 
+   - 虚拟机会保证一个类的构造器方法在多线程环境中被正确加锁和同步 
+   - 当访问一个java类的静态域时，只有真正声明这个静态变量的类才会被初始化。
+
+**Java类的生命周期**
+
+![image-20220418192009062](image/image-20220418192009062.png)
+
+### 2、ClassLoader类加载器
+
+ClassLoader类加载器的作用就是将 .class 文件加载到JVM虚拟机中去
+
+### 3、Java反射机制
+
+在运行状态中，对于任意一个类，都能够获取到这个类的所有属性和方法，对于任意一个对象，都能够 调用它的任意一个方法和属性(包括私有的方法和属性)，这种动态获取的信息以及动态调用对象的方法的 功能就称为java语言的反射机制。通俗点讲，通过反射，该类对我们来说是完全透明的，想要获取任何 东西都可以。
+
+**Class类常用类**
+
+| 修饰符 | 返回值类型    | 方法（形参）                                                 | 说明                                                         |
+| ------ | ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| static | Class         | forName(String className)                                    | 返回与带有给定字符串名的类 或接口相关联的 Class 对象。       |
+| static | Class         | forName(String name, boolean initialize, ClassLoader loader) | 使用给定的类加载器，返回与 带有给定字符串名的类或接口 相关联的 Class 对象。 |
+|        | ClassLoader   | getClassLoader()                                             | 返回该类的类加载器。                                         |
+|        | ClassLoader   | getConstructor(Class... parameterTypes)                      | 返回一个 Constructor 对象， 它反映此 Class 对象所表示的 类的指定公共构造方法。 |
+|        | Constructor[] | getConstructors()                                            | 返回一个包含某些 Constructor 对象的数组，这 些对象反映此 Class 对象所表 示的类的所有公共构造方法。 |
+|        | Constructor   | getDeclaredConstructor(Class... parameterTypes)              | 返回一个 Constructor 对象， 该对象反映此 Class 对象所表 示的类或接口的指定构造方 法。 |
+|        | Constructor[] | getDeclaredConstructors()                                    | 返回 Constructor 对象的一个 数组，这些对象反映此 Class 对象表示的类声明的所有构造 方法。 |
+|        | Field         | getDeclaredField(String name)                                | 返回一个 Field 对象，该对象反 映此 Class 对象所表示的类或 接口的指定已声明字段。 |
+|        | Field[]       | getDeclaredFields()                                          | 返回 Field 对象的一个数组，这 些对象反映此 Class 对象所表 示的类或接口所声明的所有字 段。 |
+|        | Method        | getDeclaredMethod(String name, Class... parameterTypes)      | 返回一个 Method 对象，该对 象反映此 Class 对象所表示的 类或接口的指定已声明方法。 |
+|        | Method[]      | getDeclaredMethods()                                         | 返回 Method 对象的一个数 组，这些对象反映此 Class 对 象表示的类或接口声明的所有 方法，包括公共、保护、默认 （包）访问和私有方法，但不 包括继承的方法。 |
+|        | Field         | getField(String name)                                        | 返回一个 Field 对象，它反映此 Class 对象所表示的类或接口的 指定公共成员字段。 |
+|        | Field[]       | getFields()                                                  | 返回一个包含某些 Field 对象的 数组，这些对象反映此 Class 对象所表示的类或接口的所有 可访问公共字段。 |
+|        | Method        | getMethod(String name, Class... parameterTypes)              | 返回一个 Method 对象，它反 映此 Class 对象所表示的类或 接口的指定公共成员方法。 |
+|        | Method[]      | getMethods()                                                 | 返回一个包含某些 Method 对 象的数组，这些对象反映此 Class 对象所表示的类或接口 （包括那些由该类或接口声明 的以及从超类和超接口继承的 那些的类或接口）的公共 member 方法。 |
+
+**通过反射机制往List中添加任意类型的元素**
+
+注意：这只是演示反射机制，在正常的开发中不能这样使用
+
+## 十四、 多线程基础
+
+### 1、了解进程和线程
+
+几乎所有的操作系统都支持进程的概念，所有运行中的任务通常对应一个进程（Process）。当一个程序 进入内存运行时，即变成一个进程。进程是处于运行过程中的程序，并且具有一定的独立功能，进程是 系统进行资源分配和调度的一个独立单位一般而言，进程包含如下三个特征。
+
+- 独立性：进程是系统中独立存在的实体，它可以拥有自己独立的资源，每一个进程都拥有自己私有 的地址空间。在没有经过进程本身允许的情况下，一个用户进程不可以直接访问其他进程的地址空 间。
+- 动态性：进程与程序的区别在于，程序只是一个静态的指令集合，而进程是一个正在系统中活动的 指令集合。在进程中加入了时间的概念。进程具有自己的生命周期和各种不同的状态，这些概念在 程序中都是不具备的。
+- 并发性：多个进程可以在单个处理器上并发执行，多个进程之间不会互相影响。
+
+大部分操作系统都支持多进程并发运行，现代的操作系统几乎都支持同时运行多个任务。
+
+多线程则扩展了多进程的概念，使得同一个进程可以同时并发处理多个任务。线程（Thread）也被称作 轻量级进程（Lightweight Process），线程是进程的执行单元。就像进程在操作系统中的地位一样，线 程在程序中是独立的、并发的执行流。当进程被初始化后，主线程就被创建了。对于绝大多数的应用程 序来说，通常仅要求有一个主线程，但也可以在该进程内创建多条顺序执行流，这些顺序执行流就是线 程，每个线程也是互相独立的。
+
+线程是进程的组成部分，一个进程可以拥有多个线程，一个线程必须有一个父进程。线程可以拥有自己 的堆栈、自己的程序计数器和自己的局部变量，但不拥有系统资源，它与父进程的其他线程共享该进程 所拥有的全部资源。因为多个线程共享父进程里的全部资源，因此编程更加方便；但必须更加小心，因 为需要确保线程不会妨碍同一进程里的其他线程线程可以完成一定的任务，可以与其他线程共享父进程中的共享变量及部分环境，相互之间协同来完成进程所要完成的任务。
+
+简单来说：
+
+- 进程：进程是系统进行资源分配和调度的基本单位，可以将进程理解为一个正在执行的程序。 
+- 线程：线程是程序执行的最小单位，一个进程可由一个或多个线程组成。
+
+总结：操作系统可以同时执行多个任务，每个任务就是进程；进程可以同时执行多个任务，每个任务就 是线程。
+
+### 2、Java线程实现
+
+Java语言提主要供了两种实现线程的方式：
+
+- 继承Thread类创建线程类 
+- 实现Runnable接口创建线程类
+
+1. 继承Thread类创建线程类
+
+   实现步骤：
+
+   - 定义类继承Thread类，并重写Thread类的run()方法，该run()方法的方法体就代表了线程需要完 成的任务。因此把run()方法称为线程执行体。
+   - 创建Thread子类的实例，即创建了线程对象。
+   - 调用线程对象的start()方法来启动该线程。
+
+2. 实现Runnable接口创建线程类
+
+   实现步骤：
+
+   - 定义类实现Runnable接口，并重写Runnable接口的run()方法，该run()方法的方法体就代表了 线程需要完成的任务。
+   - 创建Runnable实现类的实例，并以此实例作为Thread的target来创建Thread对象，该Thread对 象才是真正的线程对象。
+   - 调用该Thread对象的start()方法来启动该线程。
+
+###  3、Java线程状态
+
+![image-20220418193036051](image/image-20220418193036051.png)
+
+- 新建状态（New）：线程对象实例化后就进入了新建状态。
+- 就绪状态（Runnable）：线程对象实例化后，其他线程调用了该对象的start()方法，虚拟机便 会启动该线程，处于就绪状态的线程随时可能被调度执行。
+- 运行状态（Running）：线程获得了时间片，开始执行。只能从就绪状态进入运行状态。
+- 阻塞状态（Blocked）：线程因为某个原因暂停执行，并让出CPU的使用权后便进入了阻塞状 态。
+  - 等待阻塞：调用运行线程的wait()方法，虚拟机会把该线程放入等待池。
+  - 同步阻塞：运行线程获取对象的同步锁时，该锁已被其他线程获得，虚拟机会把该线程放入锁 定池。
+  - 其他线程：调用运行线程的sleep()方法或join()方法，或线程发出I/O请求时，进入阻塞状态。
+- 结束状态（Dead）：线程正常执行完或异常退出时，进入了结束状态。
+
+### 4、Thread类常用基本方法
+
+| 返类型        | 构造器/方法                          | 说明                                                         |
+| ------------- | ------------------------------------ | ------------------------------------------------------------ |
+|               | Thread()                             | 分配新的 Thread 对象。                                       |
+|               | Thread(Runnable target)              | 分配新的 Thread 对象。                                       |
+|               | Thread(Runnable target, String name) | 分配新的 Thread 对象。                                       |
+| static Thread | currentThread()                      | 返回对当前正在执行的线程对象的引用。                         |
+| static void   | sleep(long millis)                   | 在指定的毫秒数内让当前正在执行的线程休眠（暂停 执行）。      |
+| static void   | sleep(long millis, int nanos)        | 在指定的毫秒数加指定的纳秒数内让当前正在执行的 线程休眠（暂停执行）。 |
+| static void   | yield()                              | 暂停当前正在执行的线程对象，并执行其他线程。                 |
+| void          | start()                              | 使该线程开始执行；Java 虚拟机调用该线程的 run 方 法。        |
+| long          | getId()                              | 返回该线程的标识符。                                         |
+| String        | getName()                            | 返回该线程的名称。                                           |
+| int           | getPriority()                        | 返回线程的优先级。                                           |
+| boolean       | isAlive()                            | 测试线程是否处于活动状态。                                   |
+| void          | join()                               | 等待该线程终止。                                             |
+| void          | join(long millis)                    | 等待该线程终止的时间最长为 millis 毫秒。                     |
+| void          | join(long millis, int nanos)         | 等待该线程终止的时间最长为 millis 毫秒 + nanos 纳 秒         |
+| void          | setName(String name)                 | 改变线程名称，使之与参数 name 相同。                         |
+| void          | setPriority(int newPriority)         | 更改线程的优先级。参数范围[1,10]                             |
+
+### 5、线程同步
+
+许多在单线程情况下的代码放到多线程环境下容易出现线程安全问题
+
+1. 线程安全问题
+
+   通过模拟取钱过程演示线程安全问题。
+
+   一般取钱过程：
+
+   1. 用户输入账户、密码，系统判断用户的账户、密码是否匹配。 
+   2. 用户输入取款金额。 
+   3. 系统判断账户余额是否大于取款金额。 
+   4. 如果余额大于取款金额，则取款成功；如果余额小于取款金额，则取款失败。
+
+   在模拟过程中就模拟后面三步，没有模拟账户密码验证过程。
+
+2. 使用同步代码块
+
+   为了解决线程安全问题，Java的多线程支持引入了同步监视器来解决这个问题，使用同步监视器的通用 方法就是同步代码块。
+
+   同步代码块的语法格式如下：
+
+   ```java
+   synchronized (obj) {
+   	//同步代码块
+   }
+   ```
+
+   obj叫做同步监视器（锁对象），任何线程进入下面同步代码块之前必须先获得对obj的锁；其他线程无 法获得锁，也就执行同步代码块。这种做法符合：“加锁-修改-释放锁”的逻辑。锁对象可以是任意对象， 但必须保证是同一对象任何时刻只能有一个线程可以获得对同步监视器的锁定，当同步代码块执行完成后该线程会释放对该同 步监视器的锁定。
+
+3. 同步方法
+
+   除了同步代码块，Java的多线程安全支持还提供了同步方法，同步方法也是使用synchronized关键字来 修饰某个方法，则该方法称为同步方法。对于synchronized修饰的实例方法（非static方法），无须显 式指定同步监视器，同步方法的同步监视器就是this，也就是调用该方法的对象。
+
+4.  同步锁（Lock）
+
+   从Java5开始，Java提供了一种功能更强大的线程同步机制——通过显式定义同步锁对象来实现同步，在 这种机制下，同步锁由Lock对象充当。
+
+   Lock提供了比synchronized方法和synchronized代码块更广泛的锁定操作，Lock允许实现更灵活的结 构，可以具有差别很大的属性。
+
+   Lock是控制多个线程对共享资源进行访问的工具。通常，锁提供了对共享资源的独占访问，每次只能有 一个线程对Lock对象加锁，线程开始访问共享资源之前应先获得Lock对象。
+
+   在实现线程安全的控制中，比较常用的是 ReentrantLock（可重入锁）。使用该Lock对象可以显式地加 锁、释放锁。
+
+### 6、死锁
+
+当两个线程相互等待对方释放同步监视器时就会发生死锁，Java虚拟机没有监测，也没有采取措施来处 理死锁情况，所以多线程编程时应该采取措施避免死锁出现。一旦出现死锁，整个程序既不会发生任何 异常，也不会给出任何提示，只是所有线程处于阻塞状态，无法继续。 在系统中出现多个同步监视器的情况下很容易发生死锁。
+
+### 7、wait()、notify/notifyAll()
+
+1. wait()、notify/notifyAll()方法是Object的final方法，无法被重写。 
+2. wait()使当前线程阻塞，前提是必须先获得锁，一般配合synchronized关键字使用，即，一般在 synchronized同步代码块里使用wait()、notify/notifyAll()方法。 
+3. 由于wait()、notify/notifyAll()在synchronized代码块执行，说明当前线程一定是获取了锁的。当线 程执行wait()方法时候，会释放当前的锁，然后让出CPU，进入等待状态。只有当notify/notifyAll()被执 行时候，才会唤醒一个或多个正处于等待状态的线程，然后继续往下执行，直到执行完synchronized代 码块的代码或是中途遇到wait()，再次释放锁。也就是说，notify/notifyAll()的执行只是唤醒沉睡的线 程，而不会立即释放锁，锁的释放要看代码块的具体执行情况。所以在编程中，尽量在使用了 notify/notifyAll()后立即退出临界区，以唤醒其他线程。 
+4. wait()需要被try...catch包围。 
+5. notify和wait的顺序不能错，如果A线程先执行notify方法，B线程在执行wait方法，那么B线程是无 法被唤醒的。 
+6. notify和notifyAll的区别
+   - notify方法只唤醒一个等待（对象的）线程并使该线程开始执行。所以如果有多个线程等待一个对 象，这个方法只会唤醒其中一个线程，选择哪个线程取决于操作系统对多线程管理的实现。
+   - notifyAll会唤醒所有等待(对象的)线程，尽管哪一个线程将会第一个处理取决于操作系统的实现。 如果当前情况下有多个线程需要被唤醒，推荐使用notifyAll方法。
+
+
+
+
+
