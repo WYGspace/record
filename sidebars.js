@@ -34,6 +34,7 @@ const sidebars = {
 			items: [
 				'技术栈/Java基础',
 				'技术栈/JavaWed',
+				'技术栈/SSM整合',
 				'技术栈/Maven',
 				'技术栈/MySQL',
 				//'技术栈/Ajax',
