@@ -73,15 +73,16 @@ Servlet程序是由WEB服务器调用，web服务器收到客户端的Servlet访
 
 ⑤WEB应用程序被停止或重新启动之前，Servlet引擎将卸载Servlet，并在卸载之前调用Servlet的 destroy()方法。
 
-
-
+```
 servlet的生命周期：
     实例化 ------------→ Servlet 容器创建 Servlet 的实例
-    ↓
+      ↓
     初始化 ------------→ 调用 init() 方法
-    ↓
+      ↓
     服 务 ------------→ 调用 service() 方法（doGet()或者doPost()）
-    ↓
+      ↓
     销 毁 ------------→ 调用 destroy() 方法
-    ↓
+      ↓
     不可用------------→ 销毁实例并标记为垃圾收集
+```
+
