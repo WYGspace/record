@@ -108,6 +108,8 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      // 可隐藏的侧边栏
+      hideableSidebar: true,
       // 自动折叠侧边栏
       autoCollapseSidebarCategories:true,
     }),
