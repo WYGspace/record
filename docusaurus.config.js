@@ -108,6 +108,8 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      // 自动折叠侧边栏
+      autoCollapseSidebarCategories:true,
     }),
   
   // label：语言标签。
