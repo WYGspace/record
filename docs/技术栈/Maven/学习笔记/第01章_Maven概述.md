@@ -1,4 +1,4 @@
-# 第一章 Maven概述
+# 第01章_Maven概述
 
 ## 一、为什么要学习Maven？
 
@@ -183,4 +183,62 @@ org.springframework.cloud:spring-cloud-netflix-archaius:jar:2.2.6.RELEASE:compil
 - 管理规模庞大的 jar 包，需要**专门**工具。
 - 脱离 IDE 环境执行构建操作，需要**专门**工具。
 
-二、什么是 Maven？
+## 二、什么是 Maven？
+
+Maven 是 Apache 软件基金会组织维护的一款专门为 Java 项目提供**构建**和**依赖**管理支持的工具。
+
+### 1、构建
+
+Java 项目开发过程中，构建指的是使用**『原材料生产产品』**的过程。
+
+- 原材料
+
+  - Java 源代码
+
+  - 基于 HTML 的 Thymeleaf 文件
+
+  - 图片
+
+  - 配置文件
+
+  - ###### ……
+
+- 产品
+  
+  - 一个可以在服务器上运行的项目
+
+构建过程包含的主要的环节：
+
+- 清理：删除上一次构建的结果，为下一次构建做好准备
+- 编译：Java 源程序编译成 *.class 字节码文件
+- 测试：运行提前准备好的测试程序
+- 报告：针对刚才测试的结果生成一个全面的信息
+- 打包
+  - Java工程：jar包
+  - Web工程：war包
+- 安装：把一个 Maven 工程经过打包操作生成的 jar 包或 war 包存入 Maven 仓库
+- 部署
+  - 部署 jar 包：把一个 jar 包部署到 Nexus 私服服务器上
+  - 部署 war 包：借助相关 Maven 插件（例如 cargo），将 war 包部署到 Tomcat 服务器上
+
+### 2、依赖
+
+如果 A 工程里面用到了 B 工程的类、接口、配置文件等等这样的资源，那么我们就可以说 A 依赖 B。例如：
+
+- junit-4.12 依赖 hamcrest-core-1.3
+- thymeleaf-3.0.12.RELEASE 依赖 ognl-3.1.26
+  - ognl-3.1.26 依赖 javassist-3.20.0-GA
+- thymeleaf-3.0.12.RELEASE 依赖 attoparser-2.0.5.RELEASE
+- thymeleaf-3.0.12.RELEASE 依赖 unbescape-1.1.6.RELEASE
+- thymeleaf-3.0.12.RELEASE 依赖 slf4j-api-1.7.26
+
+依赖管理中要解决的具体问题：
+
+- jar 包的下载：使用 Maven 之后，jar 包会从规范的远程仓库下载到本地
+- jar 包之间的依赖：通过依赖的传递性自动完成
+- jar 包之间的冲突：通过对依赖的配置进行调整，让某些jar包不会被导入
+
+### 3、Maven 的工作机制
+
+![image-20220420100943953](image/image-20220420100943953.png)
+

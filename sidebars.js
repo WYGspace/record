@@ -35,7 +35,23 @@ const sidebars = {
 				'技术栈/Java基础',
 				'技术栈/JavaWed',
 				'技术栈/SSM整合',
-				'技术栈/Maven',
+				{
+					type: 'category',
+					label: 'Maven',
+					link: {type: 'generated-index'},
+					items: [
+						{
+							type: 'category',
+							label: '学习笔记',
+							link: {type: 'generated-index'},
+							items: [
+								'技术栈/Maven/学习笔记/第00章_源自',
+								'技术栈/Maven/学习笔记/第01章_Maven概述',
+								'技术栈/Maven/学习笔记/第02章_Maven 核心程序解压和配置',
+							],
+						},
+					],
+				},
 				'技术栈/MySQL',
 				//'技术栈/Ajax',
 				//'技术栈/Promise',
