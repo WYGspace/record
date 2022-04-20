@@ -373,7 +373,7 @@ src
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <!--一定要注意:我们这里加载的是总的配置文件，之前被这里坑了！-->
+      <!-- 一定要注意:这里加载的是总的配置文件 -->
       <param-value>classpath:applicationContext.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
