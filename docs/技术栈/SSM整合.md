@@ -30,7 +30,7 @@ src
 
 - database.properties
 
-  ```properties
+  ```properties title="database.properties"
   #(mysql-connection-java-5.x.jar以前的写法)
   #生产环境使用
   #jdbc.driver=com.mysql.jdbc.Driver
@@ -50,7 +50,7 @@ src
 
 #### pom.xml
 
-```xml
+```xml title="pom.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -208,7 +208,7 @@ src
 
 #### mybatis-config.xml
 
-```xml
+```xml title="mybatis-config.xml"
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
