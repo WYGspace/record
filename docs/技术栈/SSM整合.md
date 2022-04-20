@@ -42,7 +42,7 @@ src
   #生产环境使用
   jdbc.driver=com.mysql.cj.jdbc.Driver
   jdbc.url=jdbc:mysql://localhost:3306/ssmbuild?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
-  jdbc.username=
+  jdbc.username=root
   jdbc.password=root
   ```
 
