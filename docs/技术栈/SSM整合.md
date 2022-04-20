@@ -28,27 +28,23 @@ src
 
 ### 3、properties配置
 
-- database.properties
+```properties title="database.properties"
+#(mysql-connection-java-5.x.jar以前的写法)
+#生产环境使用
+#jdbc.driver=com.mysql.jdbc.Driver
+#jdbc.url=jdbc:mysql://localhost:13306/ssmbuild?useUnicode=true&characterEncoding=utf8
+#jdbc.username=root
+#jdbc.password=root
 
-  ```properties title="database.properties"
-  #(mysql-connection-java-5.x.jar以前的写法)
-  #生产环境使用
-  #jdbc.driver=com.mysql.jdbc.Driver
-  #jdbc.url=jdbc:mysql://localhost:13306/ssmbuild?useUnicode=true&characterEncoding=utf8
-  #jdbc.username=root
-  #jdbc.password=root
-  
-  #(mysql-connection-java-6.x.jar以后的写法)
-  #生产环境使用
-  jdbc.driver=com.mysql.cj.jdbc.Driver
-  jdbc.url=jdbc:mysql://localhost:3306/ssmbuild?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
-  jdbc.username=root
-  jdbc.password=root
-  ```
+#(mysql-connection-java-6.x.jar以后的写法)
+#生产环境使用
+jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/ssmbuild?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+jdbc.username=root
+jdbc.password=root
+```
 
 ### 4、xml配置
-
-#### pom.xml
 
 ```xml title="pom.xml"
 <?xml version="1.0" encoding="UTF-8"?>
@@ -206,8 +202,6 @@ src
 </project>
 ```
 
-#### mybatis-config.xml
-
 ```xml title="mybatis-config.xml"
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
@@ -221,9 +215,7 @@ src
 </configuration>
 ```
 
-#### spring-mappers.xml
-
-```xml
+```xml title="spring-mappers.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -284,9 +276,7 @@ src
 </beans>
 ```
 
-#### spring-service.xml
-
-```xml
+```xml title="spring-service.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -310,9 +300,7 @@ src
 </beans>
 ```
 
-#### spring-mvc.xml
-
-```xml
+```xml title="spring-mvc.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -345,9 +333,7 @@ src
 </beans>
 ```
 
-#### applicationContext.xml
-
-```xml
+```xml title="applicationContext.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -359,9 +345,7 @@ src
 </beans>
 ```
 
-#### web.xml
-
-```xml
+```xml title="web.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
