@@ -81,7 +81,7 @@ Maven本地仓库根目录\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar
 
 下面根据提示操作
 
-:::TIP
+:::tip
 
 Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7:【直接回车，使用默认值】
 
