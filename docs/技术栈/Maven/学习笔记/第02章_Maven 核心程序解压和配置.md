@@ -98,27 +98,27 @@ Maven 是一个用 Java 语言开发的程序，它必须基于 JDK 来运行，
 
 ```
 C:\Users\Administrator>echo %JAVA_HOME%
-D:\software\Java
+C:\Program Files\Java\jdk1.8.0_191
 
 C:\Users\Administrator>java -version
-java version "1.8.0_141"
-Java(TM) SE Runtime Environment (build 1.8.0_141-b15)
-Java HotSpot(TM) 64-Bit Server VM (build 25.141-b15, mixed mode)
+java version "1.8.0_191"
+Java(TM) SE Runtime Environment (build 1.8.0_191-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 ```
 
 ### 2、配置 MAVEN_HOME
 
 ![image-20220420110900171](image/image-20220420110900171.png)
 
-```
-TIP
+:::tip
 
 配置环境变量的规律：
 
 XXX_HOME 通常指向的是 bin 目录的上一级
 
 PATH 指向的是 bin 目录
-```
+
+:::
 
 ### 3、配置PATH
 
