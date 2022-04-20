@@ -111,7 +111,7 @@ const config = {
       // 可隐藏的侧边栏
       hideableSidebar: true,
       // 自动折叠侧边栏
-      autoCollapseSidebarCategories:true,
+      autoCollapseSidebarCategories: true,
     }),
   
   // label：语言标签。
