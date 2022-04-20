@@ -56,7 +56,7 @@ Maven 下载 jar 包默认访问境外的中央仓库，而国外网站速度很
 
 #### ②加入我们的配置
 
-将下面 mirror 标签整体复制到 settings.xml 文件的 mirrors 标签的内部。
+将下面 mirror 标签整体复制到 settings.xml 文件的 **mirrors 标签的内部**。
 
 ```xml
 <mirror>
@@ -69,7 +69,7 @@ Maven 下载 jar 包默认访问境外的中央仓库，而国外网站速度很
 
 ### 5、配置 Maven 工程的基础 JDK 版本
 
-如果按照默认配置运行，Java 工程使用的默认 JDK 版本是 1.5，而我们熟悉和常用的是 JDK 1.8 版本。修改配置的方式是：将 profile 标签整个复制到 settings.xml 文件的 profiles 标签内。
+如果按照默认配置运行，Java 工程使用的默认 JDK 版本是 1.5，而我们熟悉和常用的是 JDK 1.8 版本。修改配置的方式是：将 profile 标签整个复制到 settings.xml 文件的 **profiles 标签内**。
 
 ```xml
 <profile>
@@ -84,5 +84,54 @@ Maven 下载 jar 包默认访问境外的中央仓库，而国外网站速度很
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
     </properties>
 </profile>
+```
+
+## 二、配置环境变量
+
+### 1、检查 JAVA_HOME 配置是否正确
+
+Maven 是一个用 Java 语言开发的程序，它必须基于 JDK 来运行，需要通过 JAVA_HOME 来找到 JDK 的安装位置。
+
+![image-20220420110547368](image/image-20220420110547368.png)
+
+可以使用下面的命令验证：
+
+```
+C:\Users\Administrator>echo %JAVA_HOME%
+D:\software\Java
+
+C:\Users\Administrator>java -version
+java version "1.8.0_141"
+Java(TM) SE Runtime Environment (build 1.8.0_141-b15)
+Java HotSpot(TM) 64-Bit Server VM (build 25.141-b15, mixed mode)
+```
+
+### 2、配置 MAVEN_HOME
+
+![image-20220420110900171](image/image-20220420110900171.png)
+
+```
+TIP
+
+配置环境变量的规律：
+
+XXX_HOME 通常指向的是 bin 目录的上一级
+
+PATH 指向的是 bin 目录
+```
+
+### 3、配置PATH
+
+![image-20220420111006416](image/image-20220420111006416.png)
+
+### 4、验证
+
+```
+C:\Users\WYG>mvn -v
+Apache Maven 3.8.3 (ff8e977a158738155dc465c6a97ffaf31982d739)
+Maven home: F:\configuring\Maven\version\apache-maven-3.8.3
+Java version: 1.8.0_191, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk1.8.0_191\jre
+Default locale: zh_CN, platform encoding: GBK
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 ```
 
