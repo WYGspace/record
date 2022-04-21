@@ -969,12 +969,18 @@ Maven工程之间，A 工程继承 B 工程
 :::tip
 
 [INFO] +- org.springframework:**spring-core**:jar:**4.0.0**.RELEASE:compile
-[INFO] | \- commons-logging:commons-logging:jar:1.1.1:compile
+
+[INFO] | \\- commons-logging:commons-logging:jar:1.1.1:compile
+
 [INFO] +- org.springframework:**spring-beans**:jar:**4.0.0**.RELEASE:compile
+
 [INFO] +- org.springframework:**spring-context**:jar:**4.0.0**.RELEASE:compile
+
 [INFO] +- org.springframework:**spring-expression**:jar:4.0.0.RELEASE:compile
+
 [INFO] +- org.springframework:**spring-aop**:jar:**4.0.0**.RELEASE:compile
-[INFO] | \- aopalliance:aopalliance:jar:1.0:compile
+
+[INFO] | \\- aopalliance:aopalliance:jar:1.0:compile
 
 :::
 
@@ -1134,9 +1140,13 @@ Maven工程之间，A 工程继承 B 工程
 :::tip
 
 [INFO] org.springframework:spring-aop:jar:4.1.4.RELEASE:compile
+
 [INFO] org.springframework:spring-core:jar:4.1.4.RELEASE:compile
+
 [INFO] org.springframework:spring-context:jar:4.1.4.RELEASE:compile
+
 [INFO] org.springframework:spring-beans:jar:4.1.4.RELEASE:compile
+
 [INFO] org.springframework:spring-expression:jar:4.1.4.RELEASE:compile
 
 :::
