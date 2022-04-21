@@ -46,6 +46,17 @@ jdbc.password=root
 
 ### 4、xml配置
 
+import TOCInline from '@theme/TOCInline';
+
+<TOCInline
+  // Only show h2 and h4 headings
+  toc={toc.filter((node) => node.level === 4)}
+  // minHeadingLevel={2}
+  // Show h4 headings in addition to the default h2 and h3 headings
+  maxHeadingLevel={4}/>
+
+#### pom.xml
+
 ```xml title="pom.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -202,6 +213,8 @@ jdbc.password=root
 </project>
 ```
 
+#### mybatis-config.xml
+
 ```xml title="mybatis-config.xml"
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
@@ -214,6 +227,8 @@ jdbc.password=root
     </typeAliases>
 </configuration>
 ```
+
+#### spring-mappers.xml
 
 ```xml title="spring-mappers.xml"
 <?xml version="1.0" encoding="UTF-8"?>
@@ -276,6 +291,8 @@ jdbc.password=root
 </beans>
 ```
 
+#### spring-service.xml
+
 ```xml title="spring-service.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -299,6 +316,8 @@ jdbc.password=root
 
 </beans>
 ```
+
+#### spring-mvc.xml
 
 ```xml title="spring-mvc.xml"
 <?xml version="1.0" encoding="UTF-8"?>
@@ -333,6 +352,8 @@ jdbc.password=root
 </beans>
 ```
 
+#### applicationContext.xml
+
 ```xml title="applicationContext.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -344,6 +365,8 @@ jdbc.password=root
     <import resource="spring-service.xml"/>
 </beans>
 ```
+
+#### web.xml
 
 ```xml title="web.xml"
 <?xml version="1.0" encoding="UTF-8"?>
