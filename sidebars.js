@@ -49,6 +49,7 @@ const sidebars = {
 								'技术栈/Maven/学习笔记/第01章_Maven概述',
 								'技术栈/Maven/学习笔记/第02章_Maven 核心程序解压和配置',
 								'技术栈/Maven/学习笔记/第03章_使用 Maven：命令行环境',
+								'技术栈/Maven/学习笔记/第04章_使用Maven：IDEA环境',
 							],
 						},
 					],
