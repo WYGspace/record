@@ -488,7 +488,7 @@ JSP全称是 Java Server Page，和 Thymeleaf 一样，是服务器端页面渲�
 
 ### 8、配置对 servlet-api.jar 包的依赖
 
-对于不知道详细信息的依赖可以到https://mvnrepository.com/网站查询。使用关键词搜索，然后在搜索结果列表中选择适合的使用。
+对于不知道详细信息的依赖可以到https://mvnrepository.com/ 网站查询。使用关键词搜索，然后在搜索结果列表中选择适合的使用。
 
 ![image-20220420165634919](image/image-20220420165634919.png)
 
