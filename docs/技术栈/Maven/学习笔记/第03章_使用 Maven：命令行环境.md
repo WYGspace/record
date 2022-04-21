@@ -84,15 +84,25 @@ Maven本地仓库根目录\javax\servlet\servlet-api\2.5\servlet-api-2.5.jar
 :::tip
 
 Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7:【直接回车，使用默认值】
+
 Define value for property 'groupId': com.atguigu.maven【输入工件组的名称，通常是公司域名】
+
 Define value for property 'artifactId': pro01-maven-java【输入组内工件的名称，通常是项目名称】
+
 Define value for property 'version' 1.0-SNAPSHOT: :【直接回车，使用默认值】
+
 Define value for property 'package' com.atguigu.maven: :【直接回车，使用默认值】
+
 Confirm properties configuration: 
+
 groupId: com.atguigu.maven 
+
 artifactId: pro01-maven-java 
+
 version: 1.0-SNAPSHOT 
+
 package: com.atguigu.maven 
+
 Y: :【直接回车，表示确认。如果前面有输入错误，想要重新输入，则输入 N 再回车。】
 
 :::
@@ -355,14 +365,23 @@ mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -Darchetyp
 :::tip
 
 Define value for property 'groupId': com.atguigu.maven 【输入工件组的名称，通常是公司域名】
+
 Define value for property 'artifactId': pro02-maven-web 【输入组内工件的名称，通常是项目名称】
+
 Define value for property 'version' 1.0-SNAPSHOT: :【直接回车，使用默认值】
+
 Define value for property 'package' com.atguigu.maven: :【直接回车，使用默认值】 
+
 Confirm properties configuration: 
+
 groupId: com.atguigu.maven 
+
 artifactId: pro02-maven-web 
+
 version: 1.0-SNAPSHOT 
+
 package: com.atguigu.maven 
+
 Y: :【直接回车，表示确认】
 
 :::
