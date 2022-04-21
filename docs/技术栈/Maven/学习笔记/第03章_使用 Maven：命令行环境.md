@@ -592,10 +592,14 @@ mvn dependency:list
 :::tip
 
 [INFO] The following files have been resolved:
-[INFO] org.hamcrest:hamcrest-core:jar:1.3:test
-[INFO] javax.servlet:javax.servlet-api:jar:3.1.0:provided
-[INFO] com.atguigu.maven:pro01-maven-java:jar:1.0-SNAPSHOT:compile
-[INFO] junit:junit:jar:4.12:test
+
+[INFO] 	com.atguigu.maven:pro01-maven-java:jar:1.0-SNAPSHOT:compile
+
+[INFO] 	org.hamcrest:hamcrest-core:jar:1.3:test
+
+[INFO] 	javax.servlet:javax.servlet-api:jar:3.1.0:provided
+
+[INFO] 	junit:junit:jar:4.12:test
 
 :::
 
@@ -616,10 +620,14 @@ mvn dependency:tree
 :::tip
 
 [INFO] com.atguigu.maven:pro02-maven-web:war:1.0-SNAPSHOT
+
+[INFO] +- com.atguigu.maven:pro01-maven-java:jar:1.0-SNAPSHOT:compile
+
 [INFO] +- junit:junit:jar:4.12:test
-[INFO] | \- org.hamcrest:hamcrest-core:jar:1.3:test
-[INFO] +- javax.servlet:javax.servlet-api:jar:3.1.0:provided
-[INFO] \- com.atguigu.maven:pro01-maven-java:jar:1.0-SNAPSHOT:compile
+
+[INFO] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+
+[INFO] \- javax.servlet:javax.servlet-api:jar:3.1.0:provided
 
 :::
 
