@@ -625,7 +625,7 @@ mvn dependency:tree
 
 [INFO] +- junit:junit:jar:4.12:test
 
-[INFO] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] |  \\- org.hamcrest:hamcrest-core:jar:1.3:test
 
 [INFO] \- javax.servlet:javax.servlet-api:jar:3.1.0:provided
 
