@@ -715,7 +715,7 @@ public class Calculator {
 
 测试方式是在pro02-maven-web的测试程序中加入servlet-api.jar包中的类。
 
-修改：**pro02-maven-web**\src\**test**\java\com\atguigu\maven\**CalculatorTest.java**
+修改：**pro02-maven-web**\src\\**test**\java\com\atguigu\maven\\**CalculatorTest.java**
 
 ```java
 package com.atguigu.maven;
@@ -795,10 +795,14 @@ A 依赖 B，B 依赖 C，那么在 A 没有配置对 C 的依赖的情况下，
 :::tip
 
 [INFO] com.atguigu.maven:pro01-maven-java:jar:1.0-SNAPSHOT
+
 [INFO] +- junit:junit:jar:4.12:test
-[INFO] | \- org.hamcrest:hamcrest-core:jar:1.3:test
-[INFO] \- org.springframework:spring-core:jar:4.0.0.RELEASE:compile
-[INFO] \- commons-logging:commons-logging:jar:1.1.1:compile
+
+[INFO] |  \\- org.hamcrest:hamcrest-core:jar:1.3:test
+
+[INFO] \\- org.springframework:spring-core:jar:4.0.0.RELEASE:compile
+
+[INFO] 	\\- commons-logging:commons-logging:jar:1.1.1:compile
 
 :::
 
@@ -807,12 +811,18 @@ A 依赖 B，B 依赖 C，那么在 A 没有配置对 C 的依赖的情况下，
 :::tip
 
 [INFO] com.atguigu.maven:pro02-maven-web:war:1.0-SNAPSHOT
+
+[INFO] +- com.atguigu.maven:pro01-maven-java:jar:1.0-SNAPSHOT:compile
+
+[INFO] |  \\- org.springframework:spring-core:jar:4.0.0.RELEASE:compile
+
+[INFO] |     \\- commons-logging:commons-logging:jar:1.1.1:compile
+
 [INFO] +- junit:junit:jar:4.12:test
-[INFO] | \- org.hamcrest:hamcrest-core:jar:1.3:test
-[INFO] +- javax.servlet:javax.servlet-api:jar:3.1.0:provided
-[INFO] \- com.atguigu.maven:pro01-maven-java:jar:1.0-SNAPSHOT:compile
-[INFO] \- org.springframework:spring-core:jar:4.0.0.RELEASE:compile
-[INFO] \- commons-logging:commons-logging:jar:1.1.1:compile
+
+[INFO] |  \\- org.hamcrest:hamcrest-core:jar:1.3:test
+
+[INFO] \\- javax.servlet:javax.servlet-api:jar:3.1.0:provided
 
 :::
 
@@ -836,12 +846,18 @@ A 依赖 B，B 依赖 C，那么在 A 没有配置对 C 的依赖的情况下，
 :::tip
 
 [INFO] com.atguigu.maven:pro02-maven-web:war:1.0-SNAPSHOT
+
+[INFO] +- com.atguigu.maven:pro01-maven-java:jar:1.0-SNAPSHOT:compile
+
+[INFO] |  \\- org.springframework:spring-core:jar:4.0.0.RELEASE:compile
+
+[INFO] |     \\- commons-logging:commons-logging:jar:1.1.1:compile
+
 [INFO] +- junit:junit:jar:4.12:test
-[INFO] | \- org.hamcrest:hamcrest-core:jar:1.3:test
-[INFO] +- javax.servlet:javax.servlet-api:jar:3.1.0:provided
-[INFO] \- com.atguigu.maven:pro01-maven-java:jar:1.0-SNAPSHOT:compile
-[INFO] \- org.springframework:spring-core:jar:4.0.0.RELEASE:compile
-[INFO] \- commons-logging:commons-logging:jar:1.1.1:compile
+
+[INFO] |  \\- org.hamcrest:hamcrest-core:jar:1.3:test
+
+[INFO] \\- javax.servlet:javax.servlet-api:jar:3.1.0:provided
 
 :::
 
